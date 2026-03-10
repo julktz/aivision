@@ -14,9 +14,9 @@ if [ -n "$(git status --porcelain)" ]; then
     COMMIT_MSG="Automatisches Update: $(date +'%Y-%m-%d %H:%M:%S')"
     git commit -m "$COMMIT_MSG"
     
-    # In die Cloud (GitHub) hochladen
-    echo "🚀 Sende an GitHub..."
-    git push
+    # In die Cloud (GitHub) hochladen und alte Cloud-Version gnadenlos überschreiben
+    echo "🚀 Sende an GitHub (Überschreibe Cloud-Version)..."
+    git push --force
     
     echo "✅ Erfolgreich in die Cloud hochgeladen!"
 else
