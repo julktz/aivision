@@ -1,0 +1,60 @@
+[0.012s] Invoking command in '/home/ubuntu22/aivision/ros2_ws/build/moveit_calibration_gui': AMENT_PREFIX_PATH=/home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins:/opt/ros/humble LD_LIBRARY_PATH=/home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --build /home/ubuntu22/aivision/ros2_ws/build/moveit_calibration_gui -- -j8 -l8
+[0.080s] [  8%] [34m[1mAutomatic MOC and UIC for target moveit_handeye_calibration_rviz_plugin_core[0m
+[8.792s] [  8%] Built target moveit_handeye_calibration_rviz_plugin_core_autogen
+[8.823s] [ 16%] [32mBuilding CXX object handeye_calibration_rviz_plugin/CMakeFiles/moveit_handeye_calibration_rviz_plugin_core.dir/src/handeye_context_widget.cpp.o[0m
+[8.823s] [ 25%] [32mBuilding CXX object handeye_calibration_rviz_plugin/CMakeFiles/moveit_handeye_calibration_rviz_plugin_core.dir/src/handeye_target_widget.cpp.o[0m
+[8.824s] [ 33%] [32mBuilding CXX object handeye_calibration_rviz_plugin/CMakeFiles/moveit_handeye_calibration_rviz_plugin_core.dir/moveit_handeye_calibration_rviz_plugin_core_autogen/mocs_compilation.cpp.o[0m
+[8.824s] [ 41%] [32mBuilding CXX object handeye_calibration_rviz_plugin/CMakeFiles/moveit_handeye_calibration_rviz_plugin_core.dir/src/handeye_calibration_display.cpp.o[0m
+[8.824s] [ 50%] [32mBuilding CXX object handeye_calibration_rviz_plugin/CMakeFiles/moveit_handeye_calibration_rviz_plugin_core.dir/src/handeye_calibration_frame.cpp.o[0m
+[8.826s] [ 58%] [32mBuilding CXX object handeye_calibration_rviz_plugin/CMakeFiles/moveit_handeye_calibration_rviz_plugin_core.dir/src/handeye_control_widget.cpp.o[0m
+[11.680s] In file included from [01m[K/home/ubuntu22/aivision/ros2_ws/src/moveit_calibration/moveit_calibration_gui/handeye_calibration_rviz_plugin/src/handeye_control_widget.cpp:37[m[K:
+[11.680s] [01m[K/home/ubuntu22/aivision/ros2_ws/src/moveit_calibration/moveit_calibration_gui/handeye_calibration_rviz_plugin/include/moveit/handeye_calibration_rviz_plugin/handeye_control_widget.h:63:10:[m[K [01;31m[Kfatal error: [m[Kmoveit/planning_scene_monitor/planning_scene_monitor.hpp: No such file or directory
+[11.680s]    63 | #include [01;31m[K<moveit/planning_scene_monitor/planning_scene_monitor.hpp>[m[K
+[11.681s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[11.681s] compilation terminated.
+[11.693s] gmake[2]: *** [handeye_calibration_rviz_plugin/CMakeFiles/moveit_handeye_calibration_rviz_plugin_core.dir/build.make:132: handeye_calibration_rviz_plugin/CMakeFiles/moveit_handeye_calibration_rviz_plugin_core.dir/src/handeye_control_widget.cpp.o] Error 1
+[11.693s] gmake[2]: *** Waiting for unfinished jobs....
+[12.831s] In file included from [01m[K/home/ubuntu22/aivision/ros2_ws/src/moveit_calibration/moveit_calibration_gui/handeye_calibration_rviz_plugin/include/moveit/handeye_calibration_rviz_plugin/handeye_calibration_frame.h:47[m[K,
+[12.831s]                  from [01m[K/home/ubuntu22/aivision/ros2_ws/src/moveit_calibration/moveit_calibration_gui/handeye_calibration_rviz_plugin/include/moveit/handeye_calibration_rviz_plugin/handeye_calibration_display.h:43[m[K,
+[12.832s]                  from [01m[K/home/ubuntu22/aivision/ros2_ws/src/moveit_calibration/moveit_calibration_gui/handeye_calibration_rviz_plugin/src/handeye_calibration_frame.cpp:37[m[K:
+[12.832s] [01m[K/home/ubuntu22/aivision/ros2_ws/src/moveit_calibration/moveit_calibration_gui/handeye_calibration_rviz_plugin/include/moveit/handeye_calibration_rviz_plugin/handeye_context_widget.h:62:10:[m[K [01;31m[Kfatal error: [m[Kmoveit/common_planning_interface_objects/common_objects.hpp: No such file or directory
+[12.832s]    62 | #include [01;31m[K<moveit/common_planning_interface_objects/common_objects.hpp>[m[K
+[12.832s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[12.832s] compilation terminated.
+[12.849s] gmake[2]: *** [handeye_calibration_rviz_plugin/CMakeFiles/moveit_handeye_calibration_rviz_plugin_core.dir/build.make:104: handeye_calibration_rviz_plugin/CMakeFiles/moveit_handeye_calibration_rviz_plugin_core.dir/src/handeye_calibration_frame.cpp.o] Error 1
+[12.855s] In file included from [01m[K/home/ubuntu22/aivision/ros2_ws/src/moveit_calibration/moveit_calibration_gui/handeye_calibration_rviz_plugin/include/moveit/handeye_calibration_rviz_plugin/handeye_calibration_frame.h:47[m[K,
+[12.855s]                  from [01m[K/home/ubuntu22/aivision/ros2_ws/src/moveit_calibration/moveit_calibration_gui/handeye_calibration_rviz_plugin/include/moveit/handeye_calibration_rviz_plugin/handeye_calibration_display.h:43[m[K,
+[12.855s]                  from [01m[K/home/ubuntu22/aivision/ros2_ws/src/moveit_calibration/moveit_calibration_gui/handeye_calibration_rviz_plugin/include/moveit/handeye_calibration_rviz_plugin/handeye_target_widget.h:70[m[K,
+[12.855s]                  from [01m[K/home/ubuntu22/aivision/ros2_ws/src/moveit_calibration/moveit_calibration_gui/handeye_calibration_rviz_plugin/src/handeye_target_widget.cpp:37[m[K:
+[12.855s] [01m[K/home/ubuntu22/aivision/ros2_ws/src/moveit_calibration/moveit_calibration_gui/handeye_calibration_rviz_plugin/include/moveit/handeye_calibration_rviz_plugin/handeye_context_widget.h:62:10:[m[K [01;31m[Kfatal error: [m[Kmoveit/common_planning_interface_objects/common_objects.hpp: No such file or directory
+[12.855s]    62 | #include [01;31m[K<moveit/common_planning_interface_objects/common_objects.hpp>[m[K
+[12.855s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[12.855s] compilation terminated.
+[12.884s] gmake[2]: *** [handeye_calibration_rviz_plugin/CMakeFiles/moveit_handeye_calibration_rviz_plugin_core.dir/build.make:146: handeye_calibration_rviz_plugin/CMakeFiles/moveit_handeye_calibration_rviz_plugin_core.dir/src/handeye_target_widget.cpp.o] Error 1
+[13.240s] In file included from [01m[K/home/ubuntu22/aivision/ros2_ws/src/moveit_calibration/moveit_calibration_gui/handeye_calibration_rviz_plugin/include/moveit/handeye_calibration_rviz_plugin/handeye_calibration_frame.h:47[m[K,
+[13.240s]                  from [01m[K/home/ubuntu22/aivision/ros2_ws/src/moveit_calibration/moveit_calibration_gui/handeye_calibration_rviz_plugin/include/moveit/handeye_calibration_rviz_plugin/handeye_calibration_display.h:43[m[K,
+[13.241s]                  from [01m[K/home/ubuntu22/aivision/ros2_ws/src/moveit_calibration/moveit_calibration_gui/handeye_calibration_rviz_plugin/src/handeye_calibration_display.cpp:37[m[K:
+[13.241s] [01m[K/home/ubuntu22/aivision/ros2_ws/src/moveit_calibration/moveit_calibration_gui/handeye_calibration_rviz_plugin/include/moveit/handeye_calibration_rviz_plugin/handeye_context_widget.h:62:10:[m[K [01;31m[Kfatal error: [m[Kmoveit/common_planning_interface_objects/common_objects.hpp: No such file or directory
+[13.241s]    62 | #include [01;31m[K<moveit/common_planning_interface_objects/common_objects.hpp>[m[K
+[13.241s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[13.241s] compilation terminated.
+[13.260s] gmake[2]: *** [handeye_calibration_rviz_plugin/CMakeFiles/moveit_handeye_calibration_rviz_plugin_core.dir/build.make:90: handeye_calibration_rviz_plugin/CMakeFiles/moveit_handeye_calibration_rviz_plugin_core.dir/src/handeye_calibration_display.cpp.o] Error 1
+[13.292s] In file included from [01m[K/home/ubuntu22/aivision/ros2_ws/src/moveit_calibration/moveit_calibration_gui/handeye_calibration_rviz_plugin/include/moveit/handeye_calibration_rviz_plugin/handeye_calibration_frame.h:47[m[K,
+[13.292s]                  from [01m[K/home/ubuntu22/aivision/ros2_ws/build/moveit_calibration_gui/handeye_calibration_rviz_plugin/moveit_handeye_calibration_rviz_plugin_core_autogen/X3SZ3HJNRA/../../../../../src/moveit_calibration/moveit_calibration_gui/handeye_calibration_rviz_plugin/include/moveit/handeye_calibration_rviz_plugin/handeye_calibration_display.h:43[m[K,
+[13.292s]                  from [01m[K/home/ubuntu22/aivision/ros2_ws/build/moveit_calibration_gui/handeye_calibration_rviz_plugin/moveit_handeye_calibration_rviz_plugin_core_autogen/X3SZ3HJNRA/moc_handeye_calibration_display.cpp:10[m[K,
+[13.292s]                  from [01m[K/home/ubuntu22/aivision/ros2_ws/build/moveit_calibration_gui/handeye_calibration_rviz_plugin/moveit_handeye_calibration_rviz_plugin_core_autogen/mocs_compilation.cpp:2[m[K:
+[13.292s] [01m[K/home/ubuntu22/aivision/ros2_ws/src/moveit_calibration/moveit_calibration_gui/handeye_calibration_rviz_plugin/include/moveit/handeye_calibration_rviz_plugin/handeye_context_widget.h:62:10:[m[K [01;31m[Kfatal error: [m[Kmoveit/common_planning_interface_objects/common_objects.hpp: No such file or directory
+[13.292s]    62 |  [01;31m[K<moveit/common_planning_interface_objects/common_objects.hpp>[m[K
+[13.292s]       |  [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[13.293s] 
+[13.293s] compilation terminated.
+[13.310s] gmake[2]: *** [handeye_calibration_rviz_plugin/CMakeFiles/moveit_handeye_calibration_rviz_plugin_core.dir/build.make:76: handeye_calibration_rviz_plugin/CMakeFiles/moveit_handeye_calibration_rviz_plugin_core.dir/moveit_handeye_calibration_rviz_plugin_core_autogen/mocs_compilation.cpp.o] Error 1
+[13.369s] In file included from [01m[K/home/ubuntu22/aivision/ros2_ws/src/moveit_calibration/moveit_calibration_gui/handeye_calibration_rviz_plugin/src/handeye_context_widget.cpp:37[m[K:
+[13.369s] [01m[K/home/ubuntu22/aivision/ros2_ws/src/moveit_calibration/moveit_calibration_gui/handeye_calibration_rviz_plugin/include/moveit/handeye_calibration_rviz_plugin/handeye_context_widget.h:62:10:[m[K [01;31m[Kfatal error: [m[Kmoveit/common_planning_interface_objects/common_objects.hpp: No such file or directory
+[13.369s]    62 | #include [01;31m[K<moveit/common_planning_interface_objects/common_objects.hpp>[m[K
+[13.369s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[13.369s] compilation terminated.
+[13.390s] gmake[2]: *** [handeye_calibration_rviz_plugin/CMakeFiles/moveit_handeye_calibration_rviz_plugin_core.dir/build.make:118: handeye_calibration_rviz_plugin/CMakeFiles/moveit_handeye_calibration_rviz_plugin_core.dir/src/handeye_context_widget.cpp.o] Error 1
+[13.390s] gmake[1]: *** [CMakeFiles/Makefile2:156: handeye_calibration_rviz_plugin/CMakeFiles/moveit_handeye_calibration_rviz_plugin_core.dir/all] Error 2
+[13.390s] gmake: *** [Makefile:146: all] Error 2
+[13.393s] Invoked command in '/home/ubuntu22/aivision/ros2_ws/build/moveit_calibration_gui' returned '2': AMENT_PREFIX_PATH=/home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins:/opt/ros/humble LD_LIBRARY_PATH=/home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --build /home/ubuntu22/aivision/ros2_ws/build/moveit_calibration_gui -- -j8 -l8

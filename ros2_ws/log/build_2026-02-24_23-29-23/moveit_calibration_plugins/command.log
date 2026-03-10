@@ -1,0 +1,4 @@
+Invoking command in '/home/ubuntu22/aivision/ros2_ws/build/moveit_calibration_plugins': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/ubuntu22/aivision/ros2_ws/build/moveit_calibration_plugins -- -j8 -l8
+Invoked command in '/home/ubuntu22/aivision/ros2_ws/build/moveit_calibration_plugins' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/ubuntu22/aivision/ros2_ws/build/moveit_calibration_plugins -- -j8 -l8
+Invoking command in '/home/ubuntu22/aivision/ros2_ws/build/moveit_calibration_plugins': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/ubuntu22/aivision/ros2_ws/build/moveit_calibration_plugins
+Invoked command in '/home/ubuntu22/aivision/ros2_ws/build/moveit_calibration_plugins' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/ubuntu22/aivision/ros2_ws/build/moveit_calibration_plugins

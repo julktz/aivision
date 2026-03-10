@@ -1,0 +1,628 @@
+[0.000000] (-) TimerEvent: {}
+[0.000178] (-) JobUnselected: {'identifier': 'moveit_calibration_plugins'}
+[0.000237] (moveit_calibration_gui) JobQueued: {'identifier': 'moveit_calibration_gui', 'dependencies': OrderedDict([('moveit_calibration_plugins', '/home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins')])}
+[0.001269] (moveit_calibration_gui) JobStarted: {'identifier': 'moveit_calibration_gui'}
+[0.029771] (moveit_calibration_gui) JobProgress: {'identifier': 'moveit_calibration_gui', 'progress': 'cmake'}
+[0.034216] (moveit_calibration_gui) Command: {'cmd': ['/usr/bin/cmake', '/home/ubuntu22/aivision/ros2_ws/src/moveit_calibration/moveit_calibration_gui', '-DCMAKE_INSTALL_PREFIX=/home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui'], 'cwd': '/home/ubuntu22/aivision/ros2_ws/build/moveit_calibration_gui', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('PYTHON_BASIC_REPL', '1'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'ubuntu22'), ('LC_TIME', 'de_DE.UTF-8'), ('XDG_SESSION_TYPE', 'wayland'), ('GIT_ASKPASS', '/usr/share/antigravity/resources/app/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('ANTIGRAVITY_CLI_ALIAS', 'agy'), ('HOME', '/home/ubuntu22'), ('CHROME_DESKTOP', 'antigravity.desktop'), ('OLDPWD', '/home/ubuntu22/aivision/ros2_ws'), ('TERM_PROGRAM_VERSION', '1.107.0'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/antigravity.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('PAGER', 'cat'), ('VSCODE_GIT_ASKPASS_MAIN', '/usr/share/antigravity/resources/app/extensions/git/dist/askpass-main.js'), ('LC_MONETARY', 'de_DE.UTF-8'), ('VSCODE_GIT_ASKPASS_NODE', '/usr/share/antigravity/antigravity'), ('MANAGERPID', '1687'), ('SYSTEMD_EXEC_PID', '1862'), ('IM_CONFIG_CHECK_ENV', '1'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('ANTIGRAVITY_AGENT', '1'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '13777'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'ubuntu22'), ('JOURNAL_STREAM', '8:12027'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'ubuntu22'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('FC_FONTATIONS', '1'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/ubuntu22/.local/bin:/home/ubuntu22/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/ubuntu22-ThinkPad-P50:@/tmp/.ICE-unix/1828,unix/ubuntu22-ThinkPad-P50:/tmp/.ICE-unix/1828'), ('INVOCATION_ID', '92392783482242f0bc3271b00e071030'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'de_DE.UTF-8'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'wayland'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('PYTHONSTARTUP', '/home/ubuntu22/.config/Antigravity/User/workspaceStorage/98b320cb5ea13dade2aad4c03b013e30/ms-python.python/pythonrc.py'), ('LC_TELEPHONE', 'de_DE.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.W3D8K3'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-dc4f2e961d.sock'), ('TERM_PROGRAM', 'vscode'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'de_DE.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'de_DE.UTF-8'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('LC_IDENTIFICATION', 'de_DE.UTF-8'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/ubuntu22/aivision/ros2_ws/build/moveit_calibration_gui'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('PYLON_ROOT', '/opt/pylon'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'de_DE.UTF-8'), ('LC_PAPER', 'de_DE.UTF-8'), ('COLCON', '1'), ('GENICAM_GENTL64_PATH', ':/opt/pylon/lib/gentlproducer/gtl:/opt/pylon/lib/pylonCXP/bin/:/opt/pylon/lib/gentlproducer/gtl:/opt/pylon/lib/pylonCXP/bin/'), ('CMAKE_PREFIX_PATH', '/home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins:/opt/ros/humble')]), 'shell': False}
+[0.072851] (moveit_calibration_gui) StdoutLine: {'line': b'-- Found moveit_common: 2.5.9 (/opt/ros/humble/share/moveit_common/cmake)\n'}
+[0.073556] (moveit_calibration_gui) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.099933] (-) TimerEvent: {}
+[0.200405] (-) TimerEvent: {}
+[0.300698] (-) TimerEvent: {}
+[0.401055] (-) TimerEvent: {}
+[0.445555] (moveit_calibration_gui) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)\n'}
+[0.460122] (moveit_calibration_gui) StdoutLine: {'line': b'-- Found cv_bridge: 3.2.1 (/opt/ros/humble/share/cv_bridge/cmake)\n'}
+[0.501160] (-) TimerEvent: {}
+[0.548096] (moveit_calibration_gui) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.554889] (moveit_calibration_gui) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.570230] (moveit_calibration_gui) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.595381] (moveit_calibration_gui) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.601257] (-) TimerEvent: {}
+[0.625352] (moveit_calibration_gui) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.701356] (-) TimerEvent: {}
+[0.747467] (moveit_calibration_gui) StdoutLine: {'line': b'-- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)\n'}
+[0.748984] (moveit_calibration_gui) StdoutLine: {'line': b'-- Found image_geometry: 3.2.1 (/opt/ros/humble/share/image_geometry/cmake)\n'}
+[0.752953] (moveit_calibration_gui) StdoutLine: {'line': b'-- Found image_transport: 3.1.12 (/opt/ros/humble/share/image_transport/cmake)\n'}
+[0.801480] (-) TimerEvent: {}
+[0.902431] (-) TimerEvent: {}
+[0.912344] (moveit_calibration_gui) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.917867] (moveit_calibration_gui) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[1.002540] (-) TimerEvent: {}
+[1.106872] (-) TimerEvent: {}
+[1.133333] (moveit_calibration_gui) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[1.206982] (-) TimerEvent: {}
+[1.281952] (moveit_calibration_gui) StdoutLine: {'line': b'-- Found moveit_calibration_plugins: 2.0.0 (/home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins/share/moveit_calibration_plugins/cmake)\n'}
+[1.307086] (-) TimerEvent: {}
+[1.407423] (-) TimerEvent: {}
+[1.508333] (-) TimerEvent: {}
+[1.559932] (moveit_calibration_gui) StdoutLine: {'line': b'-- Found moveit_ros_visualization: 2.5.9 (/opt/ros/humble/share/moveit_ros_visualization/cmake)\n'}
+[1.586537] (moveit_calibration_gui) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: thread date_time system filesystem \n'}
+[1.600222] (moveit_calibration_gui) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: filesystem \n'}
+[1.608393] (-) TimerEvent: {}
+[1.670268] (moveit_calibration_gui) StdoutLine: {'line': b'-- library: /usr/lib/x86_64-linux-gnu/libcurl.so\n'}
+[1.708490] (-) TimerEvent: {}
+[1.769232] (moveit_calibration_gui) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: system filesystem date_time program_options thread chrono \n'}
+[1.808602] (-) TimerEvent: {}
+[1.814465] (moveit_calibration_gui) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: chrono date_time filesystem iostreams program_options regex serialization system thread \n'}
+[1.860880] (moveit_calibration_gui) StdoutLine: {'line': b'-- Found parameter_traits: 0.5.0 (/opt/ros/humble/share/parameter_traits/cmake)\n'}
+[1.877414] (moveit_calibration_gui) StdoutLine: {'line': b'-- Found rclcpp_lifecycle: 16.0.15 (/opt/ros/humble/share/rclcpp_lifecycle/cmake)\n'}
+[1.908860] (-) TimerEvent: {}
+[1.930473] (moveit_calibration_gui) StdoutLine: {'line': b'-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target\n'}
+[2.008990] (-) TimerEvent: {}
+[2.110434] (-) TimerEvent: {}
+[2.210788] (-) TimerEvent: {}
+[2.292324] (moveit_calibration_gui) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: date_time filesystem program_options system thread \n'}
+[2.310879] (-) TimerEvent: {}
+[2.329256] (moveit_calibration_gui) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: thread system filesystem regex date_time program_options \n'}
+[2.390253] (moveit_calibration_gui) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: system filesystem date_time program_options thread \n'}
+[2.410986] (-) TimerEvent: {}
+[2.501854] (moveit_calibration_gui) StdoutLine: {'line': b"-- Setting OGRE_DIR to: '/opt/ros/humble/share/rviz_ogre_vendor/cmake/../../../opt/rviz_ogre_vendor/lib/OGRE/cmake'\n"}
+[2.503775] (moveit_calibration_gui) StdoutLine: {'line': b'-- Found OGRE\n'}
+[2.503932] (moveit_calibration_gui) StdoutLine: {'line': b'--   static     : OFF\n'}
+[2.504091] (moveit_calibration_gui) StdoutLine: {'line': b'--   components : HLMS;MeshLodGenerator;Overlay;Paging;Property;RTShaderSystem;Terrain;Volume\n'}
+[2.504199] (moveit_calibration_gui) StdoutLine: {'line': b'--   plugins    : Plugin_BSPSceneManager;Plugin_OctreeSceneManager;Plugin_PCZSceneManager;Plugin_ParticleFX;RenderSystem_GL;RenderSystem_GL3Plus;Codec_STBI\n'}
+[2.504285] (moveit_calibration_gui) StdoutLine: {'line': b'--   media      : /opt/ros/humble/opt/rviz_ogre_vendor/share/OGRE/Media\n'}
+[2.504365] (moveit_calibration_gui) StdoutLine: {'line': b'-- OGRE_LIBRARIES: OgreHLMS;OgreMeshLodGenerator;OgreOverlay;OgrePaging;OgreProperty;OgreRTShaderSystem;OgreTerrain;OgreVolume;OgreMain\n'}
+[2.504444] (moveit_calibration_gui) StdoutLine: {'line': b'-- OGRE_LIBRARY_DIRS: /opt/ros/humble/opt/rviz_ogre_vendor/lib\n'}
+[2.504521] (moveit_calibration_gui) StdoutLine: {'line': b'-- OGRE_PLUGINS: Plugin_BSPSceneManager;Plugin_OctreeSceneManager;Plugin_PCZSceneManager;Plugin_ParticleFX;RenderSystem_GL;RenderSystem_GL3Plus;Codec_STBI\n'}
+[2.504600] (moveit_calibration_gui) StdoutLine: {'line': b'-- OGRE_PLUGIN_DIR: /opt/ros/humble/opt/rviz_ogre_vendor/lib/OGRE\n'}
+[2.504835] (moveit_calibration_gui) StdoutLine: {'line': b'-- rviz_ogre_vendor::OgreOverlay for IMPORTED_LOCATION_RELEASE: /opt/ros/humble/opt/rviz_ogre_vendor/lib/libOgreOverlay.so\n'}
+[2.504940] (moveit_calibration_gui) StdoutLine: {'line': b'-- rviz_ogre_vendor::OgreOverlay for IMPORTED_LOCATION_DEBUG: /opt/ros/humble/opt/rviz_ogre_vendor/lib/libOgreOverlay.so\n'}
+[2.505033] (moveit_calibration_gui) StdoutLine: {'line': b'-- rviz_ogre_vendor::OgreMain for IMPORTED_LOCATION_RELEASE: /opt/ros/humble/opt/rviz_ogre_vendor/lib/libOgreMain.so\n'}
+[2.505113] (moveit_calibration_gui) StdoutLine: {'line': b'-- rviz_ogre_vendor::OgreMain for IMPORTED_LOCATION_DEBUG: /opt/ros/humble/opt/rviz_ogre_vendor/lib/libOgreMain.so\n'}
+[2.506135] (moveit_calibration_gui) StdoutLine: {'line': b'-- Could not find freeimage library\n'}
+[2.511139] (-) TimerEvent: {}
+[2.611500] (-) TimerEvent: {}
+[2.628862] (moveit_calibration_gui) StdoutLine: {'line': b"-- Setting assimp_DIR to: '/opt/ros/humble/share/rviz_assimp_vendor/cmake/../../../opt/rviz_assimp_vendor/lib/cmake/assimp-4.1'\n"}
+[2.712060] (-) TimerEvent: {}
+[2.802521] (moveit_calibration_gui) StdoutLine: {'line': b'-- Found moveit_visual_tools: 4.1.2 (/opt/ros/humble/share/moveit_visual_tools/cmake)\n'}
+[2.812223] (-) TimerEvent: {}
+[2.912502] (-) TimerEvent: {}
+[2.934183] (moveit_calibration_gui) StdoutLine: {'line': b'-- Configuring done\n'}
+[3.012595] (-) TimerEvent: {}
+[3.113305] (-) TimerEvent: {}
+[3.141066] (moveit_calibration_gui) StdoutLine: {'line': b'-- Generating done\n'}
+[3.175155] (moveit_calibration_gui) StdoutLine: {'line': b'-- Build files have been written to: /home/ubuntu22/aivision/ros2_ws/build/moveit_calibration_gui\n'}
+[3.205184] (moveit_calibration_gui) CommandEnded: {'returncode': 0}
+[3.206316] (moveit_calibration_gui) JobProgress: {'identifier': 'moveit_calibration_gui', 'progress': 'build'}
+[3.206441] (moveit_calibration_gui) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/ubuntu22/aivision/ros2_ws/build/moveit_calibration_gui', '--', '-j8', '-l8'], 'cwd': '/home/ubuntu22/aivision/ros2_ws/build/moveit_calibration_gui', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('PYTHON_BASIC_REPL', '1'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'ubuntu22'), ('LC_TIME', 'de_DE.UTF-8'), ('XDG_SESSION_TYPE', 'wayland'), ('GIT_ASKPASS', '/usr/share/antigravity/resources/app/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('ANTIGRAVITY_CLI_ALIAS', 'agy'), ('HOME', '/home/ubuntu22'), ('CHROME_DESKTOP', 'antigravity.desktop'), ('OLDPWD', '/home/ubuntu22/aivision/ros2_ws'), ('TERM_PROGRAM_VERSION', '1.107.0'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/antigravity.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('PAGER', 'cat'), ('VSCODE_GIT_ASKPASS_MAIN', '/usr/share/antigravity/resources/app/extensions/git/dist/askpass-main.js'), ('LC_MONETARY', 'de_DE.UTF-8'), ('VSCODE_GIT_ASKPASS_NODE', '/usr/share/antigravity/antigravity'), ('MANAGERPID', '1687'), ('SYSTEMD_EXEC_PID', '1862'), ('IM_CONFIG_CHECK_ENV', '1'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('ANTIGRAVITY_AGENT', '1'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '13777'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'ubuntu22'), ('JOURNAL_STREAM', '8:12027'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'ubuntu22'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('FC_FONTATIONS', '1'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/ubuntu22/.local/bin:/home/ubuntu22/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/ubuntu22-ThinkPad-P50:@/tmp/.ICE-unix/1828,unix/ubuntu22-ThinkPad-P50:/tmp/.ICE-unix/1828'), ('INVOCATION_ID', '92392783482242f0bc3271b00e071030'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'de_DE.UTF-8'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'wayland'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('PYTHONSTARTUP', '/home/ubuntu22/.config/Antigravity/User/workspaceStorage/98b320cb5ea13dade2aad4c03b013e30/ms-python.python/pythonrc.py'), ('LC_TELEPHONE', 'de_DE.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.W3D8K3'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-dc4f2e961d.sock'), ('TERM_PROGRAM', 'vscode'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'de_DE.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'de_DE.UTF-8'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('LC_IDENTIFICATION', 'de_DE.UTF-8'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/ubuntu22/aivision/ros2_ws/build/moveit_calibration_gui'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('PYLON_ROOT', '/opt/pylon'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'de_DE.UTF-8'), ('LC_PAPER', 'de_DE.UTF-8'), ('COLCON', '1'), ('GENICAM_GENTL64_PATH', ':/opt/pylon/lib/gentlproducer/gtl:/opt/pylon/lib/pylonCXP/bin/:/opt/pylon/lib/gentlproducer/gtl:/opt/pylon/lib/pylonCXP/bin/'), ('CMAKE_PREFIX_PATH', '/home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins:/opt/ros/humble')]), 'shell': False}
+[3.213532] (-) TimerEvent: {}
+[3.308781] (moveit_calibration_gui) StdoutLine: {'line': b'[  8%] \x1b[34m\x1b[1mAutomatic MOC and UIC for target moveit_handeye_calibration_rviz_plugin_core\x1b[0m\n'}
+[3.313641] (-) TimerEvent: {}
+[3.414343] (-) TimerEvent: {}
+[3.440305] (moveit_calibration_gui) StdoutLine: {'line': b'[  8%] Built target moveit_handeye_calibration_rviz_plugin_core_autogen\n'}
+[3.478264] (moveit_calibration_gui) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target moveit_handeye_calibration_rviz_plugin_core\x1b[0m\n'}
+[3.514461] (-) TimerEvent: {}
+[3.615910] (-) TimerEvent: {}
+[3.628229] (moveit_calibration_gui) StdoutLine: {'line': b'[ 16%] \x1b[32mBuilding CXX object handeye_calibration_rviz_plugin/CMakeFiles/moveit_handeye_calibration_rviz_plugin_core.dir/src/handeye_control_widget.cpp.o\x1b[0m\n'}
+[3.717414] (-) TimerEvent: {}
+[3.817736] (-) TimerEvent: {}
+[3.918347] (-) TimerEvent: {}
+[4.021151] (-) TimerEvent: {}
+[4.121439] (-) TimerEvent: {}
+[4.221747] (-) TimerEvent: {}
+[4.322050] (-) TimerEvent: {}
+[4.422349] (-) TimerEvent: {}
+[4.523117] (-) TimerEvent: {}
+[4.624300] (-) TimerEvent: {}
+[4.725159] (-) TimerEvent: {}
+[4.825473] (-) TimerEvent: {}
+[4.926262] (-) TimerEvent: {}
+[5.029677] (-) TimerEvent: {}
+[5.130009] (-) TimerEvent: {}
+[5.230868] (-) TimerEvent: {}
+[5.331384] (-) TimerEvent: {}
+[5.431843] (-) TimerEvent: {}
+[5.532463] (-) TimerEvent: {}
+[5.632869] (-) TimerEvent: {}
+[5.733470] (-) TimerEvent: {}
+[5.833932] (-) TimerEvent: {}
+[5.934445] (-) TimerEvent: {}
+[6.034721] (-) TimerEvent: {}
+[6.134993] (-) TimerEvent: {}
+[6.235400] (-) TimerEvent: {}
+[6.336078] (-) TimerEvent: {}
+[6.437883] (-) TimerEvent: {}
+[6.538311] (-) TimerEvent: {}
+[6.638794] (-) TimerEvent: {}
+[6.739297] (-) TimerEvent: {}
+[6.839628] (-) TimerEvent: {}
+[6.940357] (-) TimerEvent: {}
+[7.040978] (-) TimerEvent: {}
+[7.141616] (-) TimerEvent: {}
+[7.242336] (-) TimerEvent: {}
+[7.344087] (-) TimerEvent: {}
+[7.444542] (-) TimerEvent: {}
+[7.544999] (-) TimerEvent: {}
+[7.645365] (-) TimerEvent: {}
+[7.747088] (-) TimerEvent: {}
+[7.847390] (-) TimerEvent: {}
+[7.948254] (-) TimerEvent: {}
+[8.049973] (-) TimerEvent: {}
+[8.150315] (-) TimerEvent: {}
+[8.253558] (-) TimerEvent: {}
+[8.353855] (-) TimerEvent: {}
+[8.455865] (-) TimerEvent: {}
+[8.556152] (-) TimerEvent: {}
+[8.656490] (-) TimerEvent: {}
+[8.757684] (-) TimerEvent: {}
+[8.858398] (-) TimerEvent: {}
+[8.959265] (-) TimerEvent: {}
+[9.059959] (-) TimerEvent: {}
+[9.160735] (-) TimerEvent: {}
+[9.261062] (-) TimerEvent: {}
+[9.362402] (-) TimerEvent: {}
+[9.463016] (-) TimerEvent: {}
+[9.563721] (-) TimerEvent: {}
+[9.664471] (-) TimerEvent: {}
+[9.767395] (-) TimerEvent: {}
+[9.867744] (-) TimerEvent: {}
+[9.968069] (-) TimerEvent: {}
+[10.068487] (-) TimerEvent: {}
+[10.168974] (-) TimerEvent: {}
+[10.269501] (-) TimerEvent: {}
+[10.370171] (-) TimerEvent: {}
+[10.470875] (-) TimerEvent: {}
+[10.572993] (-) TimerEvent: {}
+[10.673796] (-) TimerEvent: {}
+[10.774394] (-) TimerEvent: {}
+[10.874671] (-) TimerEvent: {}
+[10.974975] (-) TimerEvent: {}
+[11.075449] (-) TimerEvent: {}
+[11.175866] (-) TimerEvent: {}
+[11.279988] (-) TimerEvent: {}
+[11.380428] (-) TimerEvent: {}
+[11.480739] (-) TimerEvent: {}
+[11.581532] (-) TimerEvent: {}
+[11.686010] (-) TimerEvent: {}
+[11.786312] (-) TimerEvent: {}
+[11.886663] (-) TimerEvent: {}
+[11.987002] (-) TimerEvent: {}
+[12.087449] (-) TimerEvent: {}
+[12.187774] (-) TimerEvent: {}
+[12.288099] (-) TimerEvent: {}
+[12.388693] (-) TimerEvent: {}
+[12.489369] (-) TimerEvent: {}
+[12.590141] (-) TimerEvent: {}
+[12.690837] (-) TimerEvent: {}
+[12.791330] (-) TimerEvent: {}
+[12.891794] (-) TimerEvent: {}
+[12.993526] (-) TimerEvent: {}
+[13.093883] (-) TimerEvent: {}
+[13.194252] (-) TimerEvent: {}
+[13.294588] (-) TimerEvent: {}
+[13.394919] (-) TimerEvent: {}
+[13.495224] (-) TimerEvent: {}
+[13.595662] (-) TimerEvent: {}
+[13.697876] (-) TimerEvent: {}
+[13.798215] (-) TimerEvent: {}
+[13.898557] (-) TimerEvent: {}
+[13.999035] (-) TimerEvent: {}
+[14.099384] (-) TimerEvent: {}
+[14.199727] (-) TimerEvent: {}
+[14.300031] (-) TimerEvent: {}
+[14.400393] (-) TimerEvent: {}
+[14.500762] (-) TimerEvent: {}
+[14.601096] (-) TimerEvent: {}
+[14.701474] (-) TimerEvent: {}
+[14.801898] (-) TimerEvent: {}
+[14.902239] (-) TimerEvent: {}
+[15.002579] (-) TimerEvent: {}
+[15.103218] (-) TimerEvent: {}
+[15.203658] (-) TimerEvent: {}
+[15.304031] (-) TimerEvent: {}
+[15.404467] (-) TimerEvent: {}
+[15.504868] (-) TimerEvent: {}
+[15.605313] (-) TimerEvent: {}
+[15.705659] (-) TimerEvent: {}
+[15.806087] (-) TimerEvent: {}
+[15.906465] (-) TimerEvent: {}
+[16.006802] (-) TimerEvent: {}
+[16.107261] (-) TimerEvent: {}
+[16.207564] (-) TimerEvent: {}
+[16.307901] (-) TimerEvent: {}
+[16.408194] (-) TimerEvent: {}
+[16.508524] (-) TimerEvent: {}
+[16.608851] (-) TimerEvent: {}
+[16.709178] (-) TimerEvent: {}
+[16.809511] (-) TimerEvent: {}
+[16.909859] (-) TimerEvent: {}
+[17.010176] (-) TimerEvent: {}
+[17.110486] (-) TimerEvent: {}
+[17.210861] (-) TimerEvent: {}
+[17.311163] (-) TimerEvent: {}
+[17.411490] (-) TimerEvent: {}
+[17.511818] (-) TimerEvent: {}
+[17.612155] (-) TimerEvent: {}
+[17.712566] (-) TimerEvent: {}
+[17.812995] (-) TimerEvent: {}
+[17.913327] (-) TimerEvent: {}
+[18.013629] (-) TimerEvent: {}
+[18.113965] (-) TimerEvent: {}
+[18.214273] (-) TimerEvent: {}
+[18.314633] (-) TimerEvent: {}
+[18.414987] (-) TimerEvent: {}
+[18.515339] (-) TimerEvent: {}
+[18.615688] (-) TimerEvent: {}
+[18.715984] (-) TimerEvent: {}
+[18.816386] (-) TimerEvent: {}
+[18.916741] (-) TimerEvent: {}
+[19.017054] (-) TimerEvent: {}
+[19.117508] (-) TimerEvent: {}
+[19.217879] (-) TimerEvent: {}
+[19.318239] (-) TimerEvent: {}
+[19.418567] (-) TimerEvent: {}
+[19.518942] (-) TimerEvent: {}
+[19.619257] (-) TimerEvent: {}
+[19.719540] (-) TimerEvent: {}
+[19.819960] (-) TimerEvent: {}
+[19.920399] (-) TimerEvent: {}
+[20.020752] (-) TimerEvent: {}
+[20.121166] (-) TimerEvent: {}
+[20.221540] (-) TimerEvent: {}
+[20.321921] (-) TimerEvent: {}
+[20.422315] (-) TimerEvent: {}
+[20.522718] (-) TimerEvent: {}
+[20.623035] (-) TimerEvent: {}
+[20.723368] (-) TimerEvent: {}
+[20.823672] (-) TimerEvent: {}
+[20.924164] (-) TimerEvent: {}
+[21.024489] (-) TimerEvent: {}
+[21.124872] (-) TimerEvent: {}
+[21.225319] (-) TimerEvent: {}
+[21.325691] (-) TimerEvent: {}
+[21.426109] (-) TimerEvent: {}
+[21.526446] (-) TimerEvent: {}
+[21.626804] (-) TimerEvent: {}
+[21.727195] (-) TimerEvent: {}
+[21.827533] (-) TimerEvent: {}
+[21.927943] (-) TimerEvent: {}
+[22.028319] (-) TimerEvent: {}
+[22.128686] (-) TimerEvent: {}
+[22.229059] (-) TimerEvent: {}
+[22.329429] (-) TimerEvent: {}
+[22.429723] (-) TimerEvent: {}
+[22.530009] (-) TimerEvent: {}
+[22.630337] (-) TimerEvent: {}
+[22.730649] (-) TimerEvent: {}
+[22.830923] (-) TimerEvent: {}
+[22.931213] (-) TimerEvent: {}
+[23.031520] (-) TimerEvent: {}
+[23.131867] (-) TimerEvent: {}
+[23.232215] (-) TimerEvent: {}
+[23.332566] (-) TimerEvent: {}
+[23.432909] (-) TimerEvent: {}
+[23.533369] (-) TimerEvent: {}
+[23.633702] (-) TimerEvent: {}
+[23.734067] (-) TimerEvent: {}
+[23.834411] (-) TimerEvent: {}
+[23.934756] (-) TimerEvent: {}
+[24.035179] (-) TimerEvent: {}
+[24.135476] (-) TimerEvent: {}
+[24.235780] (-) TimerEvent: {}
+[24.336168] (-) TimerEvent: {}
+[24.436617] (-) TimerEvent: {}
+[24.536902] (-) TimerEvent: {}
+[24.637211] (-) TimerEvent: {}
+[24.737576] (-) TimerEvent: {}
+[24.837884] (-) TimerEvent: {}
+[24.938175] (-) TimerEvent: {}
+[25.038490] (-) TimerEvent: {}
+[25.138914] (-) TimerEvent: {}
+[25.239220] (-) TimerEvent: {}
+[25.339522] (-) TimerEvent: {}
+[25.439878] (-) TimerEvent: {}
+[25.540220] (-) TimerEvent: {}
+[25.640585] (-) TimerEvent: {}
+[25.740987] (-) TimerEvent: {}
+[25.841330] (-) TimerEvent: {}
+[25.941805] (-) TimerEvent: {}
+[26.042223] (-) TimerEvent: {}
+[26.142585] (-) TimerEvent: {}
+[26.242961] (-) TimerEvent: {}
+[26.343390] (-) TimerEvent: {}
+[26.443910] (-) TimerEvent: {}
+[26.544341] (-) TimerEvent: {}
+[26.644677] (-) TimerEvent: {}
+[26.748176] (-) TimerEvent: {}
+[26.848506] (-) TimerEvent: {}
+[26.948911] (-) TimerEvent: {}
+[27.049205] (-) TimerEvent: {}
+[27.149569] (-) TimerEvent: {}
+[27.249891] (-) TimerEvent: {}
+[27.350260] (-) TimerEvent: {}
+[27.450627] (-) TimerEvent: {}
+[27.550943] (-) TimerEvent: {}
+[27.651321] (-) TimerEvent: {}
+[27.751653] (-) TimerEvent: {}
+[27.852024] (-) TimerEvent: {}
+[27.952398] (-) TimerEvent: {}
+[28.052779] (-) TimerEvent: {}
+[28.153160] (-) TimerEvent: {}
+[28.253513] (-) TimerEvent: {}
+[28.353913] (-) TimerEvent: {}
+[28.454286] (-) TimerEvent: {}
+[28.554679] (-) TimerEvent: {}
+[28.655035] (-) TimerEvent: {}
+[28.755390] (-) TimerEvent: {}
+[28.855699] (-) TimerEvent: {}
+[28.955959] (-) TimerEvent: {}
+[29.056333] (-) TimerEvent: {}
+[29.156714] (-) TimerEvent: {}
+[29.257028] (-) TimerEvent: {}
+[29.357409] (-) TimerEvent: {}
+[29.457787] (-) TimerEvent: {}
+[29.558184] (-) TimerEvent: {}
+[29.658493] (-) TimerEvent: {}
+[29.758869] (-) TimerEvent: {}
+[29.859189] (-) TimerEvent: {}
+[29.959527] (-) TimerEvent: {}
+[30.059914] (-) TimerEvent: {}
+[30.160262] (-) TimerEvent: {}
+[30.260664] (-) TimerEvent: {}
+[30.361118] (-) TimerEvent: {}
+[30.461567] (-) TimerEvent: {}
+[30.561972] (-) TimerEvent: {}
+[30.662406] (-) TimerEvent: {}
+[30.762859] (-) TimerEvent: {}
+[30.863279] (-) TimerEvent: {}
+[30.963591] (-) TimerEvent: {}
+[31.063925] (-) TimerEvent: {}
+[31.164250] (-) TimerEvent: {}
+[31.264631] (-) TimerEvent: {}
+[31.364951] (-) TimerEvent: {}
+[31.465304] (-) TimerEvent: {}
+[31.565647] (-) TimerEvent: {}
+[31.665998] (-) TimerEvent: {}
+[31.766322] (-) TimerEvent: {}
+[31.866649] (-) TimerEvent: {}
+[31.966995] (-) TimerEvent: {}
+[32.067329] (-) TimerEvent: {}
+[32.167658] (-) TimerEvent: {}
+[32.267951] (-) TimerEvent: {}
+[32.368277] (-) TimerEvent: {}
+[32.468577] (-) TimerEvent: {}
+[32.568905] (-) TimerEvent: {}
+[32.669180] (-) TimerEvent: {}
+[32.769747] (-) TimerEvent: {}
+[32.870134] (-) TimerEvent: {}
+[32.970424] (-) TimerEvent: {}
+[33.070758] (-) TimerEvent: {}
+[33.171055] (-) TimerEvent: {}
+[33.271358] (-) TimerEvent: {}
+[33.371697] (-) TimerEvent: {}
+[33.472046] (-) TimerEvent: {}
+[33.572398] (-) TimerEvent: {}
+[33.672734] (-) TimerEvent: {}
+[33.773061] (-) TimerEvent: {}
+[33.873423] (-) TimerEvent: {}
+[33.973769] (-) TimerEvent: {}
+[34.074127] (-) TimerEvent: {}
+[34.174466] (-) TimerEvent: {}
+[34.274874] (-) TimerEvent: {}
+[34.375201] (-) TimerEvent: {}
+[34.475497] (-) TimerEvent: {}
+[34.575877] (-) TimerEvent: {}
+[34.676165] (-) TimerEvent: {}
+[34.776496] (-) TimerEvent: {}
+[34.876806] (-) TimerEvent: {}
+[34.977295] (-) TimerEvent: {}
+[35.077715] (-) TimerEvent: {}
+[35.178084] (-) TimerEvent: {}
+[35.278438] (-) TimerEvent: {}
+[35.378719] (-) TimerEvent: {}
+[35.479166] (-) TimerEvent: {}
+[35.579507] (-) TimerEvent: {}
+[35.679926] (-) TimerEvent: {}
+[35.780233] (-) TimerEvent: {}
+[35.880597] (-) TimerEvent: {}
+[35.980918] (-) TimerEvent: {}
+[36.081239] (-) TimerEvent: {}
+[36.181529] (-) TimerEvent: {}
+[36.281910] (-) TimerEvent: {}
+[36.382281] (-) TimerEvent: {}
+[36.482613] (-) TimerEvent: {}
+[36.582935] (-) TimerEvent: {}
+[36.683325] (-) TimerEvent: {}
+[36.783646] (-) TimerEvent: {}
+[36.883955] (-) TimerEvent: {}
+[36.984313] (-) TimerEvent: {}
+[37.084730] (-) TimerEvent: {}
+[37.185154] (-) TimerEvent: {}
+[37.285553] (-) TimerEvent: {}
+[37.385936] (-) TimerEvent: {}
+[37.486261] (-) TimerEvent: {}
+[37.586586] (-) TimerEvent: {}
+[37.686952] (-) TimerEvent: {}
+[37.787263] (-) TimerEvent: {}
+[37.887660] (-) TimerEvent: {}
+[37.988027] (-) TimerEvent: {}
+[38.088433] (-) TimerEvent: {}
+[38.188786] (-) TimerEvent: {}
+[38.289209] (-) TimerEvent: {}
+[38.389532] (-) TimerEvent: {}
+[38.489912] (-) TimerEvent: {}
+[38.590244] (-) TimerEvent: {}
+[38.690597] (-) TimerEvent: {}
+[38.790935] (-) TimerEvent: {}
+[38.891268] (-) TimerEvent: {}
+[38.992252] (-) TimerEvent: {}
+[39.092609] (-) TimerEvent: {}
+[39.192979] (-) TimerEvent: {}
+[39.293299] (-) TimerEvent: {}
+[39.393649] (-) TimerEvent: {}
+[39.493987] (-) TimerEvent: {}
+[39.594326] (-) TimerEvent: {}
+[39.694657] (-) TimerEvent: {}
+[39.794995] (-) TimerEvent: {}
+[39.895317] (-) TimerEvent: {}
+[39.995654] (-) TimerEvent: {}
+[40.096052] (-) TimerEvent: {}
+[40.196481] (-) TimerEvent: {}
+[40.296902] (-) TimerEvent: {}
+[40.397235] (-) TimerEvent: {}
+[40.497618] (-) TimerEvent: {}
+[40.597925] (-) TimerEvent: {}
+[40.698292] (-) TimerEvent: {}
+[40.798606] (-) TimerEvent: {}
+[40.899010] (-) TimerEvent: {}
+[40.999378] (-) TimerEvent: {}
+[41.099740] (-) TimerEvent: {}
+[41.200076] (-) TimerEvent: {}
+[41.300434] (-) TimerEvent: {}
+[41.400799] (-) TimerEvent: {}
+[41.501208] (-) TimerEvent: {}
+[41.601564] (-) TimerEvent: {}
+[41.701925] (-) TimerEvent: {}
+[41.802266] (-) TimerEvent: {}
+[41.902609] (-) TimerEvent: {}
+[42.002938] (-) TimerEvent: {}
+[42.103273] (-) TimerEvent: {}
+[42.203625] (-) TimerEvent: {}
+[42.303935] (-) TimerEvent: {}
+[42.404295] (-) TimerEvent: {}
+[42.504614] (-) TimerEvent: {}
+[42.604931] (-) TimerEvent: {}
+[42.705257] (-) TimerEvent: {}
+[42.805576] (-) TimerEvent: {}
+[42.905911] (-) TimerEvent: {}
+[43.006232] (-) TimerEvent: {}
+[43.106599] (-) TimerEvent: {}
+[43.207024] (-) TimerEvent: {}
+[43.307429] (-) TimerEvent: {}
+[43.407851] (-) TimerEvent: {}
+[43.508299] (-) TimerEvent: {}
+[43.608680] (-) TimerEvent: {}
+[43.709129] (-) TimerEvent: {}
+[43.809442] (-) TimerEvent: {}
+[43.909795] (-) TimerEvent: {}
+[44.010176] (-) TimerEvent: {}
+[44.110535] (-) TimerEvent: {}
+[44.210877] (-) TimerEvent: {}
+[44.311241] (-) TimerEvent: {}
+[44.411527] (-) TimerEvent: {}
+[44.511880] (-) TimerEvent: {}
+[44.612247] (-) TimerEvent: {}
+[44.712586] (-) TimerEvent: {}
+[44.812933] (-) TimerEvent: {}
+[44.913266] (-) TimerEvent: {}
+[45.013600] (-) TimerEvent: {}
+[45.113931] (-) TimerEvent: {}
+[45.214269] (-) TimerEvent: {}
+[45.314597] (-) TimerEvent: {}
+[45.414928] (-) TimerEvent: {}
+[45.515250] (-) TimerEvent: {}
+[45.615596] (-) TimerEvent: {}
+[45.715904] (-) TimerEvent: {}
+[45.816246] (-) TimerEvent: {}
+[45.916584] (-) TimerEvent: {}
+[46.016901] (-) TimerEvent: {}
+[46.117244] (-) TimerEvent: {}
+[46.217559] (-) TimerEvent: {}
+[46.317937] (-) TimerEvent: {}
+[46.418326] (-) TimerEvent: {}
+[46.501038] (moveit_calibration_gui) StdoutLine: {'line': b'[ 25%] \x1b[32m\x1b[1mLinking CXX shared library libmoveit_handeye_calibration_rviz_plugin_core.so\x1b[0m\n'}
+[46.518445] (-) TimerEvent: {}
+[46.618740] (-) TimerEvent: {}
+[46.719068] (-) TimerEvent: {}
+[46.819458] (-) TimerEvent: {}
+[46.919863] (-) TimerEvent: {}
+[47.020254] (-) TimerEvent: {}
+[47.120621] (-) TimerEvent: {}
+[47.221014] (-) TimerEvent: {}
+[47.321438] (-) TimerEvent: {}
+[47.421845] (-) TimerEvent: {}
+[47.522193] (-) TimerEvent: {}
+[47.622544] (-) TimerEvent: {}
+[47.722917] (-) TimerEvent: {}
+[47.823244] (-) TimerEvent: {}
+[47.923605] (-) TimerEvent: {}
+[48.023939] (-) TimerEvent: {}
+[48.124262] (-) TimerEvent: {}
+[48.224606] (-) TimerEvent: {}
+[48.325005] (-) TimerEvent: {}
+[48.425358] (-) TimerEvent: {}
+[48.525708] (-) TimerEvent: {}
+[48.626065] (-) TimerEvent: {}
+[48.726413] (-) TimerEvent: {}
+[48.826752] (-) TimerEvent: {}
+[48.927078] (-) TimerEvent: {}
+[49.027418] (-) TimerEvent: {}
+[49.127751] (-) TimerEvent: {}
+[49.228177] (-) TimerEvent: {}
+[49.329283] (-) TimerEvent: {}
+[49.429690] (-) TimerEvent: {}
+[49.530099] (-) TimerEvent: {}
+[49.630412] (-) TimerEvent: {}
+[49.730800] (-) TimerEvent: {}
+[49.831168] (-) TimerEvent: {}
+[49.931530] (-) TimerEvent: {}
+[50.031890] (-) TimerEvent: {}
+[50.132330] (-) TimerEvent: {}
+[50.232701] (-) TimerEvent: {}
+[50.332998] (-) TimerEvent: {}
+[50.433401] (-) TimerEvent: {}
+[50.533717] (-) TimerEvent: {}
+[50.544761] (moveit_calibration_gui) StdoutLine: {'line': b'[ 66%] Built target moveit_handeye_calibration_rviz_plugin_core\n'}
+[50.569102] (moveit_calibration_gui) StdoutLine: {'line': b'[ 75%] \x1b[34m\x1b[1mAutomatic MOC and UIC for target moveit_handeye_calibration_rviz_plugin\x1b[0m\n'}
+[50.592246] (moveit_calibration_gui) StdoutLine: {'line': b'[ 75%] Built target moveit_handeye_calibration_rviz_plugin_autogen\n'}
+[50.609875] (moveit_calibration_gui) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target moveit_handeye_calibration_rviz_plugin\x1b[0m\n'}
+[50.633879] (-) TimerEvent: {}
+[50.670095] (moveit_calibration_gui) StdoutLine: {'line': b'[ 83%] \x1b[32m\x1b[1mLinking CXX shared library libmoveit_handeye_calibration_rviz_plugin.so\x1b[0m\n'}
+[50.734005] (-) TimerEvent: {}
+[50.834318] (-) TimerEvent: {}
+[50.934797] (-) TimerEvent: {}
+[51.035754] (-) TimerEvent: {}
+[51.136180] (-) TimerEvent: {}
+[51.236582] (-) TimerEvent: {}
+[51.337020] (-) TimerEvent: {}
+[51.437396] (-) TimerEvent: {}
+[51.537789] (-) TimerEvent: {}
+[51.631896] (moveit_calibration_gui) StdoutLine: {'line': b'[100%] Built target moveit_handeye_calibration_rviz_plugin\n'}
+[51.637898] (-) TimerEvent: {}
+[51.646657] (moveit_calibration_gui) CommandEnded: {'returncode': 0}
+[51.647915] (moveit_calibration_gui) JobProgress: {'identifier': 'moveit_calibration_gui', 'progress': 'install'}
+[51.658853] (moveit_calibration_gui) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/ubuntu22/aivision/ros2_ws/build/moveit_calibration_gui'], 'cwd': '/home/ubuntu22/aivision/ros2_ws/build/moveit_calibration_gui', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('PYTHON_BASIC_REPL', '1'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'ubuntu22'), ('LC_TIME', 'de_DE.UTF-8'), ('XDG_SESSION_TYPE', 'wayland'), ('GIT_ASKPASS', '/usr/share/antigravity/resources/app/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('ANTIGRAVITY_CLI_ALIAS', 'agy'), ('HOME', '/home/ubuntu22'), ('CHROME_DESKTOP', 'antigravity.desktop'), ('OLDPWD', '/home/ubuntu22/aivision/ros2_ws'), ('TERM_PROGRAM_VERSION', '1.107.0'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/antigravity.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('PAGER', 'cat'), ('VSCODE_GIT_ASKPASS_MAIN', '/usr/share/antigravity/resources/app/extensions/git/dist/askpass-main.js'), ('LC_MONETARY', 'de_DE.UTF-8'), ('VSCODE_GIT_ASKPASS_NODE', '/usr/share/antigravity/antigravity'), ('MANAGERPID', '1687'), ('SYSTEMD_EXEC_PID', '1862'), ('IM_CONFIG_CHECK_ENV', '1'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('ANTIGRAVITY_AGENT', '1'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '13777'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'ubuntu22'), ('JOURNAL_STREAM', '8:12027'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'ubuntu22'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('FC_FONTATIONS', '1'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/ubuntu22/.local/bin:/home/ubuntu22/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/ubuntu22-ThinkPad-P50:@/tmp/.ICE-unix/1828,unix/ubuntu22-ThinkPad-P50:/tmp/.ICE-unix/1828'), ('INVOCATION_ID', '92392783482242f0bc3271b00e071030'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'de_DE.UTF-8'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'wayland'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('PYTHONSTARTUP', '/home/ubuntu22/.config/Antigravity/User/workspaceStorage/98b320cb5ea13dade2aad4c03b013e30/ms-python.python/pythonrc.py'), ('LC_TELEPHONE', 'de_DE.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.W3D8K3'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-dc4f2e961d.sock'), ('TERM_PROGRAM', 'vscode'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'de_DE.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'de_DE.UTF-8'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('LC_IDENTIFICATION', 'de_DE.UTF-8'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/ubuntu22/aivision/ros2_ws/build/moveit_calibration_gui'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('PYLON_ROOT', '/opt/pylon'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'de_DE.UTF-8'), ('LC_PAPER', 'de_DE.UTF-8'), ('COLCON', '1'), ('GENICAM_GENTL64_PATH', ':/opt/pylon/lib/gentlproducer/gtl:/opt/pylon/lib/pylonCXP/bin/:/opt/pylon/lib/gentlproducer/gtl:/opt/pylon/lib/pylonCXP/bin/'), ('CMAKE_PREFIX_PATH', '/home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins:/opt/ros/humble')]), 'shell': False}
+[51.667627] (moveit_calibration_gui) StdoutLine: {'line': b'-- Install configuration: "Release"\n'}
+[51.667894] (moveit_calibration_gui) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/share/moveit_calibration_gui/handeye_calibration_rviz_plugin_description.xml\n'}
+[51.667974] (moveit_calibration_gui) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/share/moveit_calibration_gui/environment/library_path.sh\n'}
+[51.668060] (moveit_calibration_gui) StdoutLine: {'line': b'-- Installing: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/share/moveit_calibration_gui/environment/library_path.dsv\n'}
+[51.668172] (moveit_calibration_gui) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/share/ament_index/resource_index/package_run_dependencies/moveit_calibration_gui\n'}
+[51.668342] (moveit_calibration_gui) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/share/ament_index/resource_index/parent_prefix_path/moveit_calibration_gui\n'}
+[51.668460] (moveit_calibration_gui) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/share/moveit_calibration_gui/environment/ament_prefix_path.sh\n'}
+[51.668674] (moveit_calibration_gui) StdoutLine: {'line': b'-- Installing: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/share/moveit_calibration_gui/environment/ament_prefix_path.dsv\n'}
+[51.668844] (moveit_calibration_gui) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/share/moveit_calibration_gui/environment/path.sh\n'}
+[51.669023] (moveit_calibration_gui) StdoutLine: {'line': b'-- Installing: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/share/moveit_calibration_gui/environment/path.dsv\n'}
+[51.669253] (moveit_calibration_gui) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/share/moveit_calibration_gui/local_setup.bash\n'}
+[51.669414] (moveit_calibration_gui) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/share/moveit_calibration_gui/local_setup.sh\n'}
+[51.669553] (moveit_calibration_gui) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/share/moveit_calibration_gui/local_setup.zsh\n'}
+[51.669645] (moveit_calibration_gui) StdoutLine: {'line': b'-- Installing: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/share/moveit_calibration_gui/local_setup.dsv\n'}
+[51.669766] (moveit_calibration_gui) StdoutLine: {'line': b'-- Installing: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/share/moveit_calibration_gui/package.dsv\n'}
+[51.669914] (moveit_calibration_gui) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/share/ament_index/resource_index/packages/moveit_calibration_gui\n'}
+[51.669985] (moveit_calibration_gui) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/share/ament_index/resource_index/rviz_common__pluginlib__plugin/moveit_calibration_gui\n'}
+[51.670049] (moveit_calibration_gui) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/share/moveit_calibration_gui/cmake/export_moveit_calibration_guiExport.cmake\n'}
+[51.670112] (moveit_calibration_gui) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/share/moveit_calibration_gui/cmake/export_moveit_calibration_guiExport-release.cmake\n'}
+[51.670205] (moveit_calibration_gui) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/share/moveit_calibration_gui/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[51.670272] (moveit_calibration_gui) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/share/moveit_calibration_gui/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[51.670412] (moveit_calibration_gui) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/share/moveit_calibration_gui/cmake/moveit_calibration_guiConfig.cmake\n'}
+[51.670512] (moveit_calibration_gui) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/share/moveit_calibration_gui/cmake/moveit_calibration_guiConfig-version.cmake\n'}
+[51.670576] (moveit_calibration_gui) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/share/moveit_calibration_gui/package.xml\n'}
+[51.670636] (moveit_calibration_gui) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/include\n'}
+[51.670694] (moveit_calibration_gui) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/include/moveit\n'}
+[51.670753] (moveit_calibration_gui) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/include/moveit/handeye_calibration_rviz_plugin\n'}
+[51.670826] (moveit_calibration_gui) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/include/moveit/handeye_calibration_rviz_plugin/handeye_calibration_frame.h\n'}
+[51.670944] (moveit_calibration_gui) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/include/moveit/handeye_calibration_rviz_plugin/handeye_target_widget.h\n'}
+[51.671107] (moveit_calibration_gui) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/include/moveit/handeye_calibration_rviz_plugin/handeye_calibration_display.h\n'}
+[51.671172] (moveit_calibration_gui) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/include/moveit/handeye_calibration_rviz_plugin/handeye_context_widget.h\n'}
+[51.671233] (moveit_calibration_gui) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/include/moveit/handeye_calibration_rviz_plugin/handeye_control_widget.h\n'}
+[51.671292] (moveit_calibration_gui) StdoutLine: {'line': b'-- Installing: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/lib/libmoveit_handeye_calibration_rviz_plugin_core.so.2.0.0\n'}
+[51.675306] (moveit_calibration_gui) StdoutLine: {'line': b'-- Set runtime path of "/home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/lib/libmoveit_handeye_calibration_rviz_plugin_core.so.2.0.0" to ""\n'}
+[51.675579] (moveit_calibration_gui) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/lib/libmoveit_handeye_calibration_rviz_plugin_core.so\n'}
+[51.675722] (moveit_calibration_gui) StdoutLine: {'line': b'-- Installing: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/lib/libmoveit_handeye_calibration_rviz_plugin.so.2.0.0\n'}
+[51.676621] (moveit_calibration_gui) StdoutLine: {'line': b'-- Set runtime path of "/home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/lib/libmoveit_handeye_calibration_rviz_plugin.so.2.0.0" to ""\n'}
+[51.676822] (moveit_calibration_gui) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/lib/libmoveit_handeye_calibration_rviz_plugin.so\n'}
+[51.677051] (moveit_calibration_gui) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/share/moveit_calibration_gui/environment/library_path.sh\n'}
+[51.677152] (moveit_calibration_gui) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/share/moveit_calibration_gui/environment/library_path.dsv\n'}
+[51.679424] (moveit_calibration_gui) CommandEnded: {'returncode': 0}
+[51.703311] (moveit_calibration_gui) JobEnded: {'identifier': 'moveit_calibration_gui', 'rc': 0}
+[51.704346] (-) EventReactorShutdown: {}

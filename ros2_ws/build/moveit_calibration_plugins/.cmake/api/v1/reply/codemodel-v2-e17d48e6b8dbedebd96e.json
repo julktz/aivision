@@ -1,0 +1,221 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						3
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Release-8d0f4acce674d8e5a7c4.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						2,
+						10
+					]
+				},
+				{
+					"build" : "handeye_calibration_solver",
+					"childIndexes" : 
+					[
+						2
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-handeye_calibration_solver-Release-00dae9e5c4ae3ad74377.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "handeye_calibration_solver",
+					"targetIndexes" : 
+					[
+						3,
+						4,
+						7
+					]
+				},
+				{
+					"build" : "gtest",
+					"jsonFile" : "directory-gtest-Release-a2408fe1a73b92c5e636.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "/opt/ros/humble/src/gtest_vendor",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				},
+				{
+					"build" : "handeye_calibration_target",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-handeye_calibration_target-Release-69d34b9f595d446882b9.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "handeye_calibration_target",
+					"targetIndexes" : 
+					[
+						5,
+						6,
+						8,
+						9
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						3
+					],
+					"name" : "moveit_calibration_plugins",
+					"targetIndexes" : 
+					[
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "gtest",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 2,
+					"id" : "gtest::@0af4add9fe94340e763e",
+					"jsonFile" : "target-gtest-Release-81e67381e074d185c828.json",
+					"name" : "gtest",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "gtest_main::@0af4add9fe94340e763e",
+					"jsonFile" : "target-gtest_main-Release-2cd98b9d75557c8ae3fd.json",
+					"name" : "gtest_main",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "moveit_calibration_plugins_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-moveit_calibration_plugins_uninstall-Release-a4b786a9a27a9cebcc75.json",
+					"name" : "moveit_calibration_plugins_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "moveit_handeye_calibration_solver::@741ec85ec53fe743496b",
+					"jsonFile" : "target-moveit_handeye_calibration_solver-Release-7c66322c6be835586bfd.json",
+					"name" : "moveit_handeye_calibration_solver",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "moveit_handeye_calibration_solver_core::@741ec85ec53fe743496b",
+					"jsonFile" : "target-moveit_handeye_calibration_solver_core-Release-c6936f7338e3aee65ed8.json",
+					"name" : "moveit_handeye_calibration_solver_core",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "moveit_handeye_calibration_target::@3b60c03316a7946bb205",
+					"jsonFile" : "target-moveit_handeye_calibration_target-Release-d1a180c27e1928a37b41.json",
+					"name" : "moveit_handeye_calibration_target",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "moveit_handeye_calibration_target_core::@3b60c03316a7946bb205",
+					"jsonFile" : "target-moveit_handeye_calibration_target_core-Release-3d6dd73df97277e04cad.json",
+					"name" : "moveit_handeye_calibration_target_core",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "test_handeye_solver::@741ec85ec53fe743496b",
+					"jsonFile" : "target-test_handeye_solver-Release-d0dba721f931bd45244d.json",
+					"name" : "test_handeye_solver",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "test_handeye_target_aruco::@3b60c03316a7946bb205",
+					"jsonFile" : "target-test_handeye_target_aruco-Release-7d31c189298ee4413997.json",
+					"name" : "test_handeye_target_aruco",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "test_handeye_target_charuco::@3b60c03316a7946bb205",
+					"jsonFile" : "target-test_handeye_target_charuco-Release-c5631786756ec4f6cee3.json",
+					"name" : "test_handeye_target_charuco",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-Release-c3835694da5a2770ea38.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/ubuntu22/aivision/ros2_ws/build/moveit_calibration_plugins",
+		"source" : "/home/ubuntu22/aivision/ros2_ws/src/moveit_calibration/moveit_calibration_plugins"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

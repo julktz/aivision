@@ -1,0 +1,59 @@
+[ 10%] Built target gtest
+[ 21%] Built target gtest_main
+[ 31%] Built target moveit_handeye_calibration_solver_core
+[ 47%] Built target moveit_handeye_calibration_target_core
+[ 57%] Built target moveit_handeye_calibration_solver
+[ 68%] Built target moveit_handeye_calibration_target
+[ 78%] Built target test_handeye_solver
+[100%] Built target test_handeye_target_aruco
+[100%] Built target test_handeye_target_charuco
+-- Install configuration: "Release"
+-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins/share/moveit_calibration_plugins/handeye_calibration_target_plugin_description.xml
+-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins/share/moveit_calibration_plugins/handeye_calibration_solver_plugin_description.xml
+-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins/share/moveit_calibration_plugins/environment/library_path.sh
+-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins/share/moveit_calibration_plugins/environment/library_path.dsv
+-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins/share/ament_index/resource_index/package_run_dependencies/moveit_calibration_plugins
+-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins/share/ament_index/resource_index/parent_prefix_path/moveit_calibration_plugins
+-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins/share/moveit_calibration_plugins/environment/ament_prefix_path.sh
+-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins/share/moveit_calibration_plugins/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins/share/moveit_calibration_plugins/environment/path.sh
+-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins/share/moveit_calibration_plugins/environment/path.dsv
+-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins/share/moveit_calibration_plugins/local_setup.bash
+-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins/share/moveit_calibration_plugins/local_setup.sh
+-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins/share/moveit_calibration_plugins/local_setup.zsh
+-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins/share/moveit_calibration_plugins/local_setup.dsv
+-- Installing: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins/share/moveit_calibration_plugins/package.dsv
+-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins/share/ament_index/resource_index/packages/moveit_calibration_plugins
+-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins/share/ament_index/resource_index/moveit_calibration_plugins__pluginlib__plugin/moveit_calibration_plugins
+-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins/share/moveit_calibration_plugins/cmake/export_moveit_calibration_pluginsExport.cmake
+-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins/share/moveit_calibration_plugins/cmake/export_moveit_calibration_pluginsExport-release.cmake
+-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins/share/moveit_calibration_plugins/cmake/ament_cmake_export_targets-extras.cmake
+-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins/share/moveit_calibration_plugins/cmake/ament_cmake_export_dependencies-extras.cmake
+-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins/share/moveit_calibration_plugins/cmake/moveit_calibration_pluginsConfig.cmake
+-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins/share/moveit_calibration_plugins/cmake/moveit_calibration_pluginsConfig-version.cmake
+-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins/share/moveit_calibration_plugins/package.xml
+-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins/include
+-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins/include/moveit
+-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins/include/moveit/handeye_calibration_solver
+-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins/include/moveit/handeye_calibration_solver/handeye_solver_base.h
+-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins/include/moveit/handeye_calibration_solver/handeye_solver_opencv.h
+-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins/lib/libmoveit_handeye_calibration_solver_core.so.2.0.0
+-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins/lib/libmoveit_handeye_calibration_solver_core.so
+-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins/lib/libmoveit_handeye_calibration_solver.so.2.0.0
+-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins/lib/libmoveit_handeye_calibration_solver.so
+-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins/share/moveit_calibration_plugins/environment/library_path.sh
+-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins/share/moveit_calibration_plugins/environment/library_path.dsv
+-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins/include
+-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins/include/moveit
+-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins/include/moveit/handeye_calibration_target
+-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins/include/moveit/handeye_calibration_target/handeye_target_base.h
+-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins/include/moveit/handeye_calibration_target/handeye_target_charuco.h
+-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins/include/moveit/handeye_calibration_target/handeye_target_aruco.h
+-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins/lib/libmoveit_handeye_calibration_target_core.so.2.0.0
+-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins/lib/libmoveit_handeye_calibration_target_core.so
+-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins/lib/libmoveit_handeye_calibration_target.so.2.0.0
+-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins/lib/libmoveit_handeye_calibration_target.so
+-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins/share/moveit_calibration_plugins/environment/library_path.sh
+-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins/share/moveit_calibration_plugins/environment/library_path.dsv
+-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins/share/moveit_calibration_plugins/test/test_aruco_marker_detection.png
+-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_plugins/share/moveit_calibration_plugins/test/test_charuco_board_detection.jpg

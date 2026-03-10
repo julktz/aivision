@@ -1,0 +1,1 @@
+cv_bridge;eigen;image_geometry;image_transport;libopencv-dev;moveit_calibration_plugins;moveit_ros_visualization;moveit_ros_planning_interface;moveit_visual_tools;pluginlib;rclcpp;rviz_common;rviz_visual_tools;tf2_eigen;libqt5-core;libqt5-gui;libqt5-widgets

@@ -1,0 +1,44 @@
+{
+    "extrinsics": {
+        "mount_frame": "wrist_2_link",
+        "translation": {
+            "x": 0.0,
+            "y": 0.015,
+            "z": 0.065
+        },
+        "rotation_euler": {
+            "roll": 90.0,
+            "pitch": -180.0,
+            "yaw": 180.0
+        }
+    },
+    "intrinsics": {
+        "focal_length": 656.81,
+        "image_width": 640,
+        "image_height": 480,
+        "camera_matrix": [
+            [
+                656.81156,
+                0.0,
+                303.26185
+            ],
+            [
+                0.0,
+                654.81533,
+                251.94473
+            ],
+            [
+                0.0,
+                0.0,
+                1.0
+            ]
+        ],
+        "distortion_coefficients": [
+            0.0351,
+            -0.067928,
+            0.001083,
+            -0.006628,
+            0.0
+        ]
+    }
+}

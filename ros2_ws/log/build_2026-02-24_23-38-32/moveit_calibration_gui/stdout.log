@@ -1,0 +1,56 @@
+[  8%] [34m[1mAutomatic MOC and UIC for target moveit_handeye_calibration_rviz_plugin_core[0m
+[  8%] Built target moveit_handeye_calibration_rviz_plugin_core_autogen
+[ 25%] [32mBuilding CXX object handeye_calibration_rviz_plugin/CMakeFiles/moveit_handeye_calibration_rviz_plugin_core.dir/moveit_handeye_calibration_rviz_plugin_core_autogen/mocs_compilation.cpp.o[0m
+[ 25%] [32mBuilding CXX object handeye_calibration_rviz_plugin/CMakeFiles/moveit_handeye_calibration_rviz_plugin_core.dir/src/handeye_calibration_frame.cpp.o[0m
+[ 33%] [32mBuilding CXX object handeye_calibration_rviz_plugin/CMakeFiles/moveit_handeye_calibration_rviz_plugin_core.dir/src/handeye_context_widget.cpp.o[0m
+[ 41%] [32mBuilding CXX object handeye_calibration_rviz_plugin/CMakeFiles/moveit_handeye_calibration_rviz_plugin_core.dir/src/handeye_control_widget.cpp.o[0m
+[ 50%] [32mBuilding CXX object handeye_calibration_rviz_plugin/CMakeFiles/moveit_handeye_calibration_rviz_plugin_core.dir/src/handeye_target_widget.cpp.o[0m
+[ 58%] [32mBuilding CXX object handeye_calibration_rviz_plugin/CMakeFiles/moveit_handeye_calibration_rviz_plugin_core.dir/src/handeye_calibration_display.cpp.o[0m
+[ 66%] [32m[1mLinking CXX shared library libmoveit_handeye_calibration_rviz_plugin_core.so[0m
+[ 66%] Built target moveit_handeye_calibration_rviz_plugin_core
+[ 75%] [34m[1mAutomatic MOC and UIC for target moveit_handeye_calibration_rviz_plugin[0m
+[ 75%] Built target moveit_handeye_calibration_rviz_plugin_autogen
+[ 83%] [32mBuilding CXX object handeye_calibration_rviz_plugin/CMakeFiles/moveit_handeye_calibration_rviz_plugin.dir/moveit_handeye_calibration_rviz_plugin_autogen/mocs_compilation.cpp.o[0m
+[ 91%] [32mBuilding CXX object handeye_calibration_rviz_plugin/CMakeFiles/moveit_handeye_calibration_rviz_plugin.dir/src/plugin_init.cpp.o[0m
+[100%] [32m[1mLinking CXX shared library libmoveit_handeye_calibration_rviz_plugin.so[0m
+[100%] Built target moveit_handeye_calibration_rviz_plugin
+-- Install configuration: "Release"
+-- Installing: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/share/moveit_calibration_gui/handeye_calibration_rviz_plugin_description.xml
+-- Installing: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/share/moveit_calibration_gui/environment/library_path.sh
+-- Installing: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/share/moveit_calibration_gui/environment/library_path.dsv
+-- Installing: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/share/ament_index/resource_index/package_run_dependencies/moveit_calibration_gui
+-- Installing: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/share/ament_index/resource_index/parent_prefix_path/moveit_calibration_gui
+-- Installing: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/share/moveit_calibration_gui/environment/ament_prefix_path.sh
+-- Installing: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/share/moveit_calibration_gui/environment/ament_prefix_path.dsv
+-- Installing: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/share/moveit_calibration_gui/environment/path.sh
+-- Installing: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/share/moveit_calibration_gui/environment/path.dsv
+-- Installing: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/share/moveit_calibration_gui/local_setup.bash
+-- Installing: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/share/moveit_calibration_gui/local_setup.sh
+-- Installing: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/share/moveit_calibration_gui/local_setup.zsh
+-- Installing: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/share/moveit_calibration_gui/local_setup.dsv
+-- Installing: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/share/moveit_calibration_gui/package.dsv
+-- Installing: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/share/ament_index/resource_index/packages/moveit_calibration_gui
+-- Installing: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/share/ament_index/resource_index/rviz_common__pluginlib__plugin/moveit_calibration_gui
+-- Installing: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/share/moveit_calibration_gui/cmake/export_moveit_calibration_guiExport.cmake
+-- Installing: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/share/moveit_calibration_gui/cmake/export_moveit_calibration_guiExport-release.cmake
+-- Installing: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/share/moveit_calibration_gui/cmake/ament_cmake_export_targets-extras.cmake
+-- Installing: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/share/moveit_calibration_gui/cmake/ament_cmake_export_dependencies-extras.cmake
+-- Installing: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/share/moveit_calibration_gui/cmake/moveit_calibration_guiConfig.cmake
+-- Installing: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/share/moveit_calibration_gui/cmake/moveit_calibration_guiConfig-version.cmake
+-- Installing: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/share/moveit_calibration_gui/package.xml
+-- Installing: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/include
+-- Installing: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/include/moveit
+-- Installing: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/include/moveit/handeye_calibration_rviz_plugin
+-- Installing: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/include/moveit/handeye_calibration_rviz_plugin/handeye_calibration_frame.h
+-- Installing: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/include/moveit/handeye_calibration_rviz_plugin/handeye_target_widget.h
+-- Installing: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/include/moveit/handeye_calibration_rviz_plugin/handeye_calibration_display.h
+-- Installing: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/include/moveit/handeye_calibration_rviz_plugin/handeye_context_widget.h
+-- Installing: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/include/moveit/handeye_calibration_rviz_plugin/handeye_control_widget.h
+-- Installing: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/lib/libmoveit_handeye_calibration_rviz_plugin_core.so.2.0.0
+-- Set runtime path of "/home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/lib/libmoveit_handeye_calibration_rviz_plugin_core.so.2.0.0" to ""
+-- Installing: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/lib/libmoveit_handeye_calibration_rviz_plugin_core.so
+-- Installing: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/lib/libmoveit_handeye_calibration_rviz_plugin.so.2.0.0
+-- Set runtime path of "/home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/lib/libmoveit_handeye_calibration_rviz_plugin.so.2.0.0" to ""
+-- Installing: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/lib/libmoveit_handeye_calibration_rviz_plugin.so
+-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/share/moveit_calibration_gui/environment/library_path.sh
+-- Up-to-date: /home/ubuntu22/aivision/ros2_ws/install/moveit_calibration_gui/share/moveit_calibration_gui/environment/library_path.dsv
