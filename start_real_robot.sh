@@ -21,7 +21,7 @@ ROBOT_IP="192.168.56.101"
 ros2 launch ur_robot_driver ur_control.launch.py \
     ur_type:=ur5e \
     robot_ip:=$ROBOT_IP \
-    use_fake_hardware:=true \
+    use_fake_hardware:=false \
     launch_rviz:=false &
 sleep 10
 

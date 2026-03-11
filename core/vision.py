@@ -16,7 +16,7 @@ import time
 
 # --- KONSTANTEN ---
 OBJECT_Z_LEVEL = 0.02  # Tisch-Höhe in Metern (relativ zu Base)
-YOLO_MODEL = "best (3).pt" # Name des Modells im gleichen Ordner
+YOLO_MODEL = "yolo11.pt" # Name des Modells im gleichen Ordner
 
 class VisionSystem:
     def __init__(self):

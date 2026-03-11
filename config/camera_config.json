@@ -3,8 +3,8 @@
         "mount_frame": "wrist_2_link",
         "translation": {
             "x": 0.0,
-            "y": 0.015,
-            "z": 0.065
+            "y": -0.007,
+            "z": 0.075
         },
         "rotation_euler": {
             "roll": 90.0,

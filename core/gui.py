@@ -107,9 +107,37 @@ class ModernGUI(ctk.CTk):
         self.lbl_speed_val = ctk.CTkLabel(self.speed_frame, text=f"{int(self.robot.speed_scale*100)}%", width=40)
         self.lbl_speed_val.pack(side="right", padx=(5, 0))
 
+        # --- Gripping Depth Control ---
+        self.lbl_depth_title = ctk.CTkLabel(self.frame_controls, text="Greiftiefe (m):", font=ctk.CTkFont(size=14, weight="bold"))
+        self.lbl_depth_title.grid(row=8, column=0, padx=20, pady=(10, 0), sticky="w")
+        
+        self.depth_frame = ctk.CTkFrame(self.frame_controls, fg_color="transparent")
+        self.depth_frame.grid(row=9, column=0, padx=20, pady=5, sticky="ew")
+        
+        self.slider_depth = ctk.CTkSlider(self.depth_frame, from_=0.0, to=0.5, number_of_steps=50, command=self.cmd_depth_changed)
+        self.slider_depth.set(self.robot.grip_depth)
+        self.slider_depth.pack(side="left", fill="x", expand=True)
+        
+        self.lbl_depth_val = ctk.CTkLabel(self.depth_frame, text=f"{int(self.robot.grip_depth*100)}cm", width=40)
+        self.lbl_depth_val.pack(side="right", padx=(5, 0))
+
+        # --- Hover Height (Approach) Control ---
+        self.lbl_approach_title = ctk.CTkLabel(self.frame_controls, text="Hover Höhe (m):", font=ctk.CTkFont(size=14, weight="bold"))
+        self.lbl_approach_title.grid(row=10, column=0, padx=20, pady=(10, 0), sticky="w")
+        
+        self.approach_frame = ctk.CTkFrame(self.frame_controls, fg_color="transparent")
+        self.approach_frame.grid(row=11, column=0, padx=20, pady=5, sticky="ew")
+        
+        self.slider_approach = ctk.CTkSlider(self.approach_frame, from_=0.05, to=0.5, number_of_steps=45, command=self.cmd_approach_changed)
+        self.slider_approach.set(self.robot.approach_height)
+        self.slider_approach.pack(side="left", fill="x", expand=True)
+        
+        self.lbl_approach_val = ctk.CTkLabel(self.approach_frame, text=f"{int(self.robot.approach_height*100)}cm", width=40)
+        self.lbl_approach_val.pack(side="right", padx=(5, 0))
+
         # --- Live Stats ---
         self.stats_frame = ctk.CTkFrame(self.frame_controls, fg_color="transparent")
-        self.stats_frame.grid(row=8, column=0, padx=20, pady=5, sticky="ew")
+        self.stats_frame.grid(row=12, column=0, padx=20, pady=10, sticky="w") # Fix: grid call was missing but pack was used internally
         
         self.lbl_fps = ctk.CTkLabel(self.stats_frame, text="FPS: --", font=ctk.CTkFont(size=14, weight="bold"), text_color="#00FFAA")
         self.lbl_fps.pack(anchor="w", pady=2)
@@ -119,11 +147,11 @@ class ModernGUI(ctk.CTk):
 
         # Trennlinie
         self.line2 = ctk.CTkFrame(self.frame_controls, height=2, fg_color="gray30")
-        self.line2.grid(row=9, column=0, padx=10, pady=10, sticky="ew")
+        self.line2.grid(row=13, column=0, padx=10, pady=10, sticky="ew")
         
         # Info Box (Log)
         self.lbl_status = ctk.CTkLabel(self.frame_controls, text="Status: Bereit", text_color="gray")
-        self.lbl_status.grid(row=15, column=0, padx=20, pady=15)
+        self.lbl_status.grid(row=14, column=0, padx=20, pady=15)
 
         # --- Rechte Seite: Video ---
         self.frame_video = ctk.CTkFrame(self)
@@ -184,6 +212,14 @@ class ModernGUI(ctk.CTk):
     def cmd_speed_changed(self, value):
         self.robot.speed_scale = float(value)
         self.lbl_speed_val.configure(text=f"{int(value*100)}%")
+
+    def cmd_depth_changed(self, value):
+        self.robot.grip_depth = float(value)
+        self.lbl_depth_val.configure(text=f"{int(value*100)}cm")
+
+    def cmd_approach_changed(self, value):
+        self.robot.approach_height = float(value)
+        self.lbl_approach_val.configure(text=f"{int(value*100)}cm")
 
     def close_settings(self):
         self.settings_open = False

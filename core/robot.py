@@ -6,7 +6,7 @@ from sensor_msgs.msg import JointState, PointCloud2, PointField, CameraInfo, Ima
 from shape_msgs.msg import SolidPrimitive
 from moveit_msgs.msg import RobotState, Constraints, PositionConstraint, OrientationConstraint, BoundingVolume, JointConstraint
 from moveit_msgs.action import MoveGroup, ExecuteTrajectory
-from moveit_msgs.srv import GetCartesianPath, GetPositionFK
+from moveit_msgs.srv import GetCartesianPath, GetPositionFK, GetPositionIK
 from tf2_ros.static_transform_broadcaster import StaticTransformBroadcaster
 from moveit_msgs.msg import PlanningScene, CollisionObject
 from shape_msgs.msg import SolidPrimitive
@@ -23,7 +23,6 @@ import numpy as np
 
 # --- KONSTANTEN ---
 IMG_WIDTH = 640
-HOVER_DISTANCE = 0.15   
 OBJECT_Z_LEVEL = 0.02
 
 class RobotController(Node):
@@ -35,6 +34,7 @@ class RobotController(Node):
         self._cartesian_client = self.create_client(GetCartesianPath, 'compute_cartesian_path')
         self._execute_client = ActionClient(self, ExecuteTrajectory, 'execute_trajectory')
         self._fk_client = self.create_client(GetPositionFK, 'compute_fk')
+        self._ik_client = self.create_client(GetPositionIK, 'compute_ik')
         
         # --- PUBLISHER ---
         self.sub_joints = self.create_subscription(JointState, '/joint_states', self.joint_cb, 10)
@@ -62,7 +62,10 @@ class RobotController(Node):
         self.reload_camera_config() # Loads focal_length, mount_frame, translation, rotation
         
         self.current_target_msg = None # Speichert den aktuellen Pfeil für RViz
-        self.speed_scale = 0.3 # Standard 30%
+        self.speed_scale = 0.1 # 10% - Teach Pendant muss auf 100% stehen!
+        self.grip_depth = 0.15 # 15cm - Standard Greif-Hub (m)
+        self.approach_height = 0.15 # 15cm - Standard Anfahr-Höhe (m)
+        self.pending_grip_yaw = 0.0 # Zuletzt geklickte Rotation (deg)
         
         # Timer ersetzt den alten while-Loop für konstantes Publishing
         self.create_timer(0.1, self.publish_target_loop)
@@ -91,13 +94,13 @@ class RobotController(Node):
         o.header.frame_id = "base_link"
         o.id = "table"
         
-        # Tischplatte (ca. 2x2 Meter, 2cm dick)
+        # Tischplatte (ca. 2x2 Meter, 1mm dünn)
         s = SolidPrimitive()
         s.type = SolidPrimitive.BOX
-        s.dimensions = [2.0, 2.0, 0.02]
+        s.dimensions = [2.0, 2.0, 0.001]
         
         pose = Pose()
-        pose.position.z = OBJECT_Z_LEVEL - 0.02 # Knapp unter der Greif-Höhe
+        pose.position.z = OBJECT_Z_LEVEL - 0.01 # 1cm unter die Greif-Höhe setzen
         o.primitives.append(s)
         o.primitive_poses.append(pose)
         o.operation = CollisionObject.ADD
@@ -231,7 +234,7 @@ class RobotController(Node):
             self.pc_width = 640 // self.pc_downsample
             self.pc_height = 480 // self.pc_downsample
             
-        d = 0.15 # project closer so it doesn't clip into the table
+        d = 0.25 # project closer so it doesn't clip into the table
         fx = self.focal_length; fy = self.focal_length
         cx = self.cam_matrix[0][2]; cy = self.cam_matrix[1][2]
         
@@ -368,7 +371,7 @@ class RobotController(Node):
             
             m.color.r = 1.0; m.color.g = 0.0; m.color.b = 1.0; m.color.a = 0.6 # Magenta
             
-            d = 0.15 # 15cm weit, passend zur PointCloud
+            d = 0.25 # 15cm weit, passend zur PointCloud
             fx = self.focal_length; fy = self.focal_length
             cx = self.cam_matrix[0][2]; cy = self.cam_matrix[1][2]
             
@@ -381,7 +384,7 @@ class RobotController(Node):
             p1 = Point(); p1.x = float(x1); p1.y = float(y1); p1.z = float(d)
             p2 = Point(); p2.x = float(x2); p2.y = float(y2); p2.z = float(d)
             p3 = Point(); p3.x = float(x3); p3.y = float(y3); p3.z = float(d)
-            p4 = Point(); p4.x = float(x4); p4.y = float(y4); p4.z = float(d)
+            p4 = Point(); p4.y = float(y4); p4.x = float(x4); p4.z = float(d)
             
             # Rays from lens
             m.points.extend([p0, p1, p0, p2, p0, p3, p0, p4])
@@ -393,69 +396,26 @@ class RobotController(Node):
         except Exception as e:
             pass
 
-    def sanitize_trajectory(self, trajectory):
-        """
-        Stellt sicher, dass die Trajektorie exakt bei den aktuellen Gelenkwinkeln startet.
-        Verhindert den 'Velocity Limit' Fehler durch kleine Sprünge beim Start.
-        """
-        if self.joint_state is None or not trajectory.joint_trajectory.points:
-            return trajectory
-            
-        if self.joint_state is None:
-            print("⚠️ Sanitizer: Kein JointState vorhanden!")
-            return trajectory
-
-        # Aktuelle Gelenke holen und in die Reihenfolge der Trajektorie bringen
-        target_names = trajectory.joint_trajectory.joint_names
-        current_pos = []
-        
-        try:
-            for name in target_names:
-                idx = self.joint_state.name.index(name)
-                current_pos.append(self.joint_state.position[idx])
-        except Exception as e:
-            state_names = self.joint_state.name if self.joint_state else "None"
-            print(f"⚠️ Sanitizer: Gelenk-Mismatch! Traj hat {target_names}, State hat {state_names}. Fehler: {e}")
-            return trajectory
-
-        # Ersten Punkt der Trajektorie hart auf Ist-Zustand setzen
-        first_point = trajectory.joint_trajectory.points[0]
-        diff = np.array(current_pos) - np.array(first_point.positions)
-        max_diff = np.max(np.abs(diff))
-        
-        if max_diff > 0.0001:
-            print(f"🛡️ Sanitizer: Korrigiere Start-Sprung von {max_diff:.4f} rad.")
-            print(f"   Ist: {[f'{p:.4f}' for p in current_pos]}")
-            print(f"   Soll: {[f'{p:.4f}' for p in first_point.positions]}")
-            first_point.positions = list(current_pos)
-            
-        # Geschwindigkeiten am Start auf 0 setzen
-        first_point.velocities = [0.0] * len(current_pos)
-        first_point.accelerations = [0.0] * len(current_pos)
-        
-        # Falls der Zeitstempel zu klein ist, geben wir dem Roboter 50ms Luft zum Anfahren
-        if first_point.time_from_start.nanosec < 50000000 and first_point.time_from_start.sec == 0:
-             first_point.time_from_start.nanosec = 50000000
-             
-        return trajectory
-
     def execute_trajectory(self, trajectory):
-        # Vor dem Ausführen säubern wir die Bahn
-        clean_traj = self.sanitize_trajectory(trajectory)
-        
-        goal = ExecuteTrajectory.Goal(); goal.trajectory = clean_traj
+        """Führt eine Trajektorie aus."""
+        goal = ExecuteTrajectory.Goal(); goal.trajectory = trajectory
         self._execute_client.wait_for_server()
         self._execute_client.send_goal_async(goal)
         return True
 
+    def wait_for_future(self, future, timeout=5.0):
+        """Hilfsfunktion: Wartet sicher auf ein ROS-Future mit Timeout."""
+        start_time = time.time()
+        while rclpy.ok() and not future.done():
+            if time.time() - start_time > timeout:
+                print(f"⚠️ Timeout ({timeout}s) beim Warten auf Server-Antwort!")
+                return False
+            time.sleep(0.01)
+        return future.done()
+
     def move_ptp(self, pose):
+        """PTP Bewegung - MoveIt plant UND führt direkt aus."""
         try:
-            joint_state = self.joint_state
-            if joint_state is not None:
-                try:
-                    idx = joint_state.name.index("shoulder_pan_joint")
-                    print(f"DEBUG: PTP Start Joint1: {joint_state.position[idx]:.4f}")
-                except: pass
             print(f"DEBUG: PTP Target Pos: {pose.position.x:.3f}, {pose.position.y:.3f}, {pose.position.z:.3f}")
             
             goal = MoveGroup.Goal(); goal.request.workspace_parameters.header.frame_id = "base_link"; goal.request.group_name = "ur_manipulator"
@@ -470,19 +430,71 @@ class RobotController(Node):
             
             goal.request.max_velocity_scaling_factor = self.speed_scale
             goal.request.max_acceleration_scaling_factor = self.speed_scale
-            
-            # Start-State auf is_diff=True setzen, damit MoveIt seinen internen 
-            # (meist aktuelleren) Monitor nutzt. Das verhindert Velocity-Sprünge.
             goal.request.start_state.is_diff = True
-            # goal.request.start_state.joint_state = self.joint_state # Nicht mehr manuell setzen
             
-            self._move_group_client.wait_for_server(); self._move_group_client.send_goal_async(goal)
+            self._move_group_client.wait_for_server()
+            self._move_group_client.send_goal_async(goal)
             return True
         except Exception as e: 
             print(f"❌ Fehler in move_ptp: {e}")
             return False
 
+    def move_ptp_joints(self, joint_values):
+        """PTP Bewegung auf Gelenk-Ziele (Synchron)."""
+        try:
+            goal = MoveGroup.Goal()
+            goal.request.group_name = "ur_manipulator"
+            constraints = Constraints()
+            joint_names = ["shoulder_pan_joint", "shoulder_lift_joint", "elbow_joint", 
+                           "wrist_1_joint", "wrist_2_joint", "wrist_3_joint"]
+            for name, val in zip(joint_names, joint_values):
+                jc = JointConstraint()
+                jc.joint_name = name; jc.position = val
+                jc.tolerance_above = 0.001; jc.tolerance_below = 0.001; jc.weight = 1.0
+                constraints.joint_constraints.append(jc)
+            goal.request.goal_constraints.append(constraints)
+            goal.request.max_velocity_scaling_factor = self.speed_scale
+            goal.request.max_acceleration_scaling_factor = self.speed_scale
+            
+            self._move_group_client.wait_for_server()
+            future = self._move_group_client.send_goal_async(goal)
+            if not self.wait_for_future(future): return False
+            
+            handle = future.result()
+            if not handle.accepted: return False
+            
+            res_future = handle.get_result_async()
+            if not self.wait_for_future(res_future, timeout=10.0): return False
+            return True
+        except Exception as e:
+            print(f"❌ Fehler in move_ptp_joints: {e}")
+            return False
+
+    def scale_trajectory_time(self, trajectory, scale):
+        """
+        Streckt die Zeitstempel einer Trajektorie um den Faktor 1/scale.
+        GetCartesianPath hat in ROS2 Humble kein max_velocity_scaling_factor,
+        deshalb verlangsamen wir manuell über die Zeitachse.
+        Velocity/Acceleration-Felder bleiben UNVERÄNDERT (MoveIt setzt sie konsistent).
+        """
+        if scale <= 0 or scale >= 1.0:
+            return trajectory
+        time_factor = 1.0 / scale
+        for point in trajectory.joint_trajectory.points:
+            total_ns = (point.time_from_start.sec * 1_000_000_000 + point.time_from_start.nanosec)
+            new_ns = int(total_ns * time_factor)
+            point.time_from_start.sec = new_ns // 1_000_000_000
+            point.time_from_start.nanosec = new_ns % 1_000_000_000
+            # Velocities konsistent mitskalieren
+            if point.velocities:
+                point.velocities = [v * scale for v in point.velocities]
+            if point.accelerations:
+                point.accelerations = [a * scale * scale for a in point.accelerations]
+        print(f"⏱️ Cartesian-Bahn auf {int(scale*100)}% Speed skaliert")
+        return trajectory
+
     def move_smart(self, target_pose):
+        """Cartesian Bewegung - GetCartesianPath + Zeitskalierung + Ausführung."""
         try:
             if self.joint_state and hasattr(self.joint_state, 'name'):
                 try:
@@ -493,23 +505,22 @@ class RobotController(Node):
             
             req = GetCartesianPath.Request(); req.header.frame_id = "base_link"; req.group_name = "ur_manipulator"
             req.start_state.is_diff = True
-            # req.start_state.joint_state = self.joint_state # Nicht mehr manuell setzen
             req.waypoints = [target_pose]; req.max_step = 0.01; req.jump_threshold = 0.0; req.avoid_collisions = True
             
             future = self._cartesian_client.call_async(req)
-            # Wir warten kurz, ob Cartesian klappt
             start = time.time()
             while not future.done():
                 time.sleep(0.01)
-                if time.time() - start > 0.5: break # Timeout
+                if time.time() - start > 0.5: break
             
             if future.done():
                 res = future.result()
                 if res and res.fraction > 0.90: 
                     print(f"✅ Lineare Bahn gefunden ({res.fraction*100:.1f}%) - Führe aus...")
-                    return self.execute_trajectory(res.solution)
+                    scaled = self.scale_trajectory_time(res.solution, self.speed_scale)
+                    return self.execute_trajectory(scaled)
                 else:
-                    print(f"⚠️ Lineare Bahn fehlgeschlagen (nur {res.fraction*100 if res else 0:.1f}%) - ABBRUCH (Kein PTP Fallback erlaubt)!")
+                    print(f"⚠️ Lineare Bahn fehlgeschlagen (nur {res.fraction*100 if res else 0:.1f}%) - Abbruch.")
                     return False
         except Exception as e: 
             print(f"❌ Fehler in move_smart: {e}")
@@ -537,15 +548,54 @@ class RobotController(Node):
             while not future.done(): time.sleep(0.01)
             
             res = future.result()
-            if res.fraction > 0.9: self.execute_trajectory(res.solution); return True
+            if res.fraction > 0.9:
+                scaled = self.scale_trajectory_time(res.solution, self.speed_scale)
+                self.execute_trajectory(scaled)
+                return True
         return False
 
     def execute_pick_cycle(self):
-        print(f"✊ Greife! Fahre {HOVER_DISTANCE}m runter...")
-        if self.move_linear_relative(-HOVER_DISTANCE):
-            time.sleep(0.5)
-            print("🛫 Fahre wieder hoch...")
-            self.move_linear_relative(HOVER_DISTANCE)
+        """Führt den Greif-Zyklus aus: Rotation -> Runter -> Warten -> Hoch."""
+        try:
+            # 1. Erst jetzt auf die Ziel-Rotation drehen (SYNCHRON)
+            print(f"🔄 Rotiere Greifer auf {self.pending_grip_yaw:.1f}° (Synchron)...")
+            
+            # Aktuelle Pose holen
+            req_fk = GetPositionFK.Request(); req_fk.header.frame_id = "base_link"; req_fk.fk_link_names = ["tool0"]; req_fk.robot_state.joint_state = self.joint_state
+            future_fk = self._fk_client.call_async(req_fk)
+            if not self.wait_for_future(future_fk): return # Fehler beim Warten
+            
+            if future_fk.result():
+                current_pose = future_fk.result().pose_stamped[0].pose
+                
+                # IK für Ziel-Orientation (festes XYZ)
+                req_ik = GetPositionIK.Request()
+                req_ik.ik_request.group_name = "ur_manipulator"; req_ik.ik_request.ik_link_name = "tool0"; req_ik.ik_request.avoid_collisions = True
+                req_ik.ik_request.pose_stamped.header.frame_id = "base_link"
+                req_ik.ik_request.pose_stamped.pose.position = current_pose.position
+                req_ik.ik_request.pose_stamped.pose.orientation = self.euler_to_quaternion(180.0, 0.0, self.pending_grip_yaw)
+                
+                future_ik = self._ik_client.call_async(req_ik)
+                if not self.wait_for_future(future_ik): return
+                res_ik = future_ik.result()
+                
+                if res_ik and res_ik.error_code.val == 1:
+                    print("✅ IK für Rotation gefunden. Starte Joint-Move...")
+                    if self.move_ptp_joints(res_ik.solution.joint_state.position):
+                        print("✅ Rotation beendet.")
+                    else:
+                        print("⚠️ Rotation fehlgeschlagen.")
+                else:
+                    print("⚠️ Keine IK für Rotation gefunden.")
+            
+            # 2. Linear Greifen
+            print(f"✊ Greife! Fahre {self.grip_depth}m runter...")
+            if self.move_linear_relative(-self.grip_depth):
+                time.sleep(0.5)
+                print("🛫 Fahre wieder hoch...")
+                self.move_linear_relative(self.grip_depth)
+        except Exception as e:
+            print(f"❌ Fehler im Pick-Cycle: {e}")
 
     def trigger_move_to(self, pixel_data):
         try:
@@ -622,14 +672,61 @@ class RobotController(Node):
             target_pose_world.position.z = intersection_world[2]
             
             # --- GREIF-ORIENTIERUNG (TOP-DOWN) ---
-            # Der Greifer soll immer senkrecht von oben greifen (Roll=180, Pitch=0),
-            # aber rotieren (Yaw), um sich an das Zielobjekt anzupassen.
+            # 1. Ziel-Rotation merken (wird erst bei 'G' angewendet)
             obj_yaw = pixel_data.get('angle_deg', 0.0)
-            target_pose_world.orientation = self.euler_to_quaternion(180.0, 0.0, obj_yaw)
+            self.pending_grip_yaw = obj_yaw
             
-            # 2. Z-Höhe (Hover) festlegen
-            target_pose_world.position.z = float(OBJECT_Z_LEVEL + HOVER_DISTANCE)
+            # Anfahrt zwingt Senkrechte (Roll=180, Pitch=0) UND fixiert j6 auf -65°
+            # 2. Z-Höhe (Hover) festlegen (Immer X cm über Tisch)
+            target_pose_world.position.z = float(OBJECT_Z_LEVEL + self.approach_height)
+            # --- IK-SUCHE FÜR J6 = -65° ---
+            j6_target_rad = math.radians(-65.0)
+            ik_solution = None
             
+            print(f"🔍 Suche IK Lösung für Ziel-Pose mit j6=-65°...")
+            # Wir sampeln den Yaw feinmaschiger (alle 5°), um eine gültige IK-Lösung mit festem j6 zu finden
+            for yaw_deg in range(0, 360, 5):
+                req = GetPositionIK.Request()
+                req.ik_request.group_name = "ur_manipulator"; req.ik_request.ik_link_name = "tool0"; req.ik_request.avoid_collisions = True
+                req.ik_request.pose_stamped.header.frame_id = "base_link"
+                req.ik_request.pose_stamped.pose.position = target_pose_world.position
+                req.ik_request.pose_stamped.pose.orientation = self.euler_to_quaternion(180.0, 0.0, float(yaw_deg))
+                
+                # Constraint: j6 auf -65°
+                jc = JointConstraint()
+                jc.joint_name = "wrist_3_joint"; jc.position = j6_target_rad
+                jc.tolerance_above = 0.001; jc.tolerance_below = 0.001; jc.weight = 1.0
+                req.ik_request.constraints.joint_constraints.append(jc)
+                
+                future = self._ik_client.call_async(req)
+                if not self.wait_for_future(future, timeout=0.1): continue
+                res = future.result()
+                
+                if res and res.error_code.val == 1: # SUCCESS
+                    # Sicherstellen, dass j6 in der Lösung wirklich passt
+                    joint_names = res.solution.joint_state.name
+                    if "wrist_3_joint" in joint_names:
+                        idx = joint_names.index("wrist_3_joint")
+                        val = res.solution.joint_state.position[idx]
+                        if abs(val - j6_target_rad) < 0.02:
+                            print(f"✅ IK Lösung bei Yaw={yaw_deg}° gefunden (j6={math.degrees(val):.1f}°).")
+                            ik_solution = res.solution.joint_state.position
+                            break
+
+            if ik_solution:
+                print(f"🚀 Führe PTP-Joint Move auf j6=-65° aus...")
+                if self.move_ptp_joints(ik_solution):
+                    print("✅ Anfahrt abgeschlossen.")
+                else:
+                    print("⚠️ Gelenkfahrt fehlgeschlagen.")
+            else:
+                print(f"⚠️ Keine IK Lösung mit j6=-65° gefunden! Nutze Cartesian Fallback...")
+                target_yaw = 0.0
+                if current_tool_rot:
+                    _, _, target_yaw = self.quaternion_to_euler(current_tool_rot)
+                target_pose_world.orientation = self.euler_to_quaternion(180.0, 0.0, target_yaw)
+                self.move_smart(target_pose_world)
+
             # Target für RViz (auf Tischhöhe zum Zeigen)
             ps = PoseStamped()
             ps.header.frame_id = "base_link"
@@ -639,8 +736,7 @@ class RobotController(Node):
             self.current_target_msg = ps
             self.target_pub.publish(ps)
             
-            print(f"🎯 Welt-Ziel (Robust): X={target_pose_world.position.x:.3f}, Y={target_pose_world.position.y:.3f}, Z={target_pose_world.position.z:.3f}")
-            self.move_smart(target_pose_world)
+            return True
         except Exception as e:
             print(f"❌ Fehler bei Ziel-Berechnung: {e}")
 
@@ -755,8 +851,26 @@ class RobotController(Node):
         q.w = cr * cp * cy + sr * sp * sy; q.x = sr * cp * cy - cr * sp * sy; q.y = cr * sp * cy + sr * cp * sy; q.z = cr * cp * sy - sr * sp * cy
         return q
 
+    def quaternion_to_euler(self, q):
+        # Hilfsfunktion: Quaternion zu Euler (deg)
+        # yaw (z-axis rotation)
+        siny_cosp = 2 * (q.w * q.z + q.x * q.y)
+        cosy_cosp = 1 - 2 * (q.y * q.y + q.z * q.z)
+        yaw = math.atan2(siny_cosp, cosy_cosp)
+        # pitch (y-axis rotation)
+        sinp = 2 * (q.w * q.y - q.z * q.x)
+        if abs(sinp) >= 1:
+            pitch = math.pi / 2 if sinp > 0 else -math.pi / 2
+        else:
+            pitch = math.asin(sinp)
+        # roll (x-axis rotation)
+        sinr_cosp = 2 * (q.w * q.x + q.y * q.z)
+        cosr_cosp = 1 - 2 * (q.x * q.x + q.y * q.y)
+        roll = math.atan2(sinr_cosp, cosr_cosp)
+        return math.degrees(roll), math.degrees(pitch), math.degrees(yaw)
+
     def go_home(self):
-        self.current_target_msg = None # Pfeil löschen bei Reset
+        self.current_target_msg = None
         goal = MoveGroup.Goal(); goal.request.workspace_parameters.header.frame_id = "base_link"; goal.request.group_name = "ur_manipulator"
         target_joints = self.home_joints
         constraints = Constraints()
@@ -765,9 +879,7 @@ class RobotController(Node):
             jc = JointConstraint(); jc.joint_name = n; jc.position = target_joints[i]; jc.tolerance_above = 0.001; jc.tolerance_below = 0.001; jc.weight = 1.0
             constraints.joint_constraints.append(jc)
         goal.request.goal_constraints.append(constraints)
-        
         goal.request.max_velocity_scaling_factor = self.speed_scale
         goal.request.max_acceleration_scaling_factor = self.speed_scale
-        
         self._move_group_client.wait_for_server()
         self._move_group_client.send_goal_async(goal)
